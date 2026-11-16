@@ -2,7 +2,7 @@
  * Three kinds of back-and-forth motion of a spring block, to tell a mechanical
  * oscillation, a periodic one and a harmonic one apart.
  */
-import { TAU } from '../_shared/oscillation.js';
+import { TAU } from '#lib/domain/oscillation.js';
 
 /**
  * @typedef {'dieu-hoa' | 'tuan-hoan' | 'tat-dan'} Mode

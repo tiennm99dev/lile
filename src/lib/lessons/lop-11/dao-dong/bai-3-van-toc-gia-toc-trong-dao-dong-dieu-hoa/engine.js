@@ -4,7 +4,7 @@
  * up or slowing down) and the find-the-moment goals.
  */
 import { tidy } from '#lib/core/number-format.js';
-import { wrapPhase } from '../_shared/oscillation.js';
+import { wrapPhase } from '#lib/domain/oscillation.js';
 
 /**
  * Largest speed and acceleration: v_max = ωA, a_max = ω²A.

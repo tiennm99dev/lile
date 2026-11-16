@@ -5,8 +5,8 @@
   import { formatNumber, numTex } from '#lib/core/number-format.js';
   import SegmentedControl from '#lib/core/segmented-control.svelte';
   import { button, card, textInput } from '#lib/core/ui.js';
-  import OscGraph from '../_shared/osc-graph.svelte';
-  import { equationTex, stateAt } from '../_shared/oscillation.js';
+  import OscGraph from '#lib/domain/osc-graph.svelte';
+  import { equationTex, stateAt } from '#lib/domain/oscillation.js';
   import { PHASES, PHASE_OPTIONS, check, extremesOf, makeProblem, startHint } from './engine.js';
 
   let seed = $state(1);

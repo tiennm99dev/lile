@@ -6,7 +6,7 @@
  * steady amplitude of `drivenAmplitude`, largest near the natural frequency.
  */
 import { int, rng } from '#lib/core/drill.js';
-import { TAU } from '../_shared/oscillation.js';
+import { TAU } from '#lib/domain/oscillation.js';
 
 /** Drag settings: β in 1/s. */
 export const DRAGS = [

@@ -18,7 +18,7 @@
     solarPower,
     windPower,
     windRaw,
-  } from './engine.js';
+  } from '#lib/domain/renewable-power.js';
 
   let tab = $state('mat-troi');
 

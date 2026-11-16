@@ -6,8 +6,8 @@
   import { button, card } from '#lib/core/ui.js';
   import { clamp, linear } from '#lib/core/visuals/svg-math.js';
   import { clientToSvg } from '#lib/utils/svg.js';
-  import SpringMass from '../_shared/spring-mass.svelte';
-  import { sample } from '../_shared/oscillation.js';
+  import SpringMass from '#lib/domain/spring-mass.svelte';
+  import { sample } from '#lib/domain/oscillation.js';
   import { GOALS, PULL_MAX, energies, meets, springMotion } from './engine.js';
 
   const KD = '#0f766e';

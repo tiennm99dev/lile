@@ -4,7 +4,7 @@
  * speed and acceleration.
  */
 import { int, pick } from '#lib/core/drill.js';
-import { TAU, piText } from '../_shared/oscillation.js';
+import { TAU, piText } from '#lib/domain/oscillation.js';
 
 /** Initial phases the drill draws, in rad. */
 export const PHASES = [

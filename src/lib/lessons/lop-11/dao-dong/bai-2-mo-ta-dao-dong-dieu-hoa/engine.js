@@ -3,7 +3,7 @@
  * axis Ox, and the matching game: set A, ω and φ so the oscillation lies on a
  * target graph.
  */
-import { phaseRelation, wrapPhase } from '../_shared/oscillation.js';
+import { phaseRelation, wrapPhase } from '#lib/domain/oscillation.js';
 
 /** Angular frequencies on offer, in rad/s, with their periods. */
 export const OMEGAS = [

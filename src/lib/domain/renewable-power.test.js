@@ -10,7 +10,7 @@ import {
   solarPower,
   windPower,
   windRaw,
-} from './engine.js';
+} from './renewable-power.js';
 
 describe('solar panel', () => {
   it('gives P = η G A', () => {

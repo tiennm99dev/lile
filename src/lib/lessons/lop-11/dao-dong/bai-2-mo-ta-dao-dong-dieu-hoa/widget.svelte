@@ -6,7 +6,7 @@
   import SegmentedControl from '#lib/core/segmented-control.svelte';
   import SliderField from '#lib/core/slider-field.svelte';
   import { button, card } from '#lib/core/ui.js';
-  import OscGraph from '../_shared/osc-graph.svelte';
+  import OscGraph from '#lib/domain/osc-graph.svelte';
   import {
     TAU,
     equationTex,
@@ -15,7 +15,7 @@
     piText,
     stateAt,
     wrapPhase,
-  } from '../_shared/oscillation.js';
+  } from '#lib/domain/oscillation.js';
   import { OMEGAS, TARGETS, compare, phiOfStep, projection } from './engine.js';
 
   const W = 360;

@@ -2,7 +2,7 @@
  * Energy of a spring pendulum: kinetic and potential energy trade places while
  * their sum stays fixed. Lengths come in cm and are turned into metres here.
  */
-import { TAU } from '../_shared/oscillation.js';
+import { TAU } from '#lib/domain/oscillation.js';
 
 /** Furthest the block can be pulled, in cm. */
 export const PULL_MAX = 8;

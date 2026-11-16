@@ -5,8 +5,8 @@
   import SegmentedControl from '#lib/core/segmented-control.svelte';
   import SliderField from '#lib/core/slider-field.svelte';
   import { button, card } from '#lib/core/ui.js';
-  import OscGraph from '../_shared/osc-graph.svelte';
-  import SpringMass from '../_shared/spring-mass.svelte';
+  import OscGraph from '#lib/domain/osc-graph.svelte';
+  import SpringMass from '#lib/domain/spring-mass.svelte';
   import {
     MODES,
     fullOscillations,

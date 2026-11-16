@@ -1,3 +1,9 @@
+/**
+ * Renewable power the grade 10 environment topic computes: a solar panel
+ * (P = η · G · A), a wind turbine with its cut-in, rated and cut-out speeds
+ * (P = Cp · ½ ρ π R² v³) and a hydro plant from its flow and head. Pure and
+ * DOM-free.
+ */
 import { tidy } from '#lib/core/number-format.js';
 
 /** Density of air, kg/m³. */

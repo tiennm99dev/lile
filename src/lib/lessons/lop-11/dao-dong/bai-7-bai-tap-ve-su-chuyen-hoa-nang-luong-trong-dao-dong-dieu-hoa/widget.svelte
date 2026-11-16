@@ -4,7 +4,7 @@
   import { formatFixed, formatNumber, numTex } from '#lib/core/number-format.js';
   import { button, card } from '#lib/core/ui.js';
   import { clientToSvg } from '#lib/utils/svg.js';
-  import SpringMass from '../_shared/spring-mass.svelte';
+  import SpringMass from '#lib/domain/spring-mass.svelte';
   import { energies, makeTask, meets, ratioAt, snapTo } from './engine.js';
 
   const KD = '#0f766e';

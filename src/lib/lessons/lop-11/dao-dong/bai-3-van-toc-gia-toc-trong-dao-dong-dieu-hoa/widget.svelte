@@ -6,9 +6,9 @@
   import SliderField from '#lib/core/slider-field.svelte';
   import { button, card } from '#lib/core/ui.js';
   import ForceArrow from '#lib/domain/force-arrow.svelte';
-  import OscGraph from '../_shared/osc-graph.svelte';
-  import SpringMass from '../_shared/spring-mass.svelte';
-  import { TAU, piText, stateAt } from '../_shared/oscillation.js';
+  import OscGraph from '#lib/domain/osc-graph.svelte';
+  import SpringMass from '#lib/domain/spring-mass.svelte';
+  import { TAU, piText, stateAt } from '#lib/domain/oscillation.js';
   import { GOALS, axisFor, extremes, motionKind, reached } from './engine.js';
 
   const PERIODS = [

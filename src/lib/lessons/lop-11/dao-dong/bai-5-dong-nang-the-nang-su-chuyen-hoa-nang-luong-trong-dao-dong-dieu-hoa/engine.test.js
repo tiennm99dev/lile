@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { stateAt } from '../_shared/oscillation.js';
+import { stateAt } from '#lib/domain/oscillation.js';
 import { GOALS, energies, meets, ratioSpot, springMotion } from './engine.js';
 
 describe('springMotion', () => {
