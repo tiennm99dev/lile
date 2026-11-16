@@ -210,7 +210,7 @@
         <text x="293" y="114" font-size="12" fill="#64748b" text-anchor="middle">?</text>
       {/if}
       <line x1="293" x2="293" y1="132" y2="222" stroke="#334155" stroke-width="2" />
-      <text x="240" y="104" font-size="10" fill="#334155"
+      <text x="236" y="102" font-size="10" fill="#334155"
         >U<tspan baseline-shift="sub" font-size="7">ra</tspan></text
       >
     </svg>

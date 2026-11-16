@@ -174,9 +174,9 @@
             <line x1="108" x2="132" y1="175" y2="175" stroke="#334155" stroke-width="2" />
             <line x1="113" x2="127" y1="180" y2="180" stroke="#334155" stroke-width="2" />
           {:else}
-            <line x1="20" x2="150" y1="125" y2="125" stroke="#334155" stroke-width="2" />
-            <circle cx="20" cy="125" r="3.5" fill="#334155" />
-            <text x="8" y="145" font-size="11" fill="#334155"
+            <line x1="100" x2="150" y1="125" y2="125" stroke="#334155" stroke-width="2" />
+            <circle cx="100" cy="125" r="3.5" fill="#334155" />
+            <text x="94" y="145" font-size="11" fill="#334155"
               >U<tspan baseline-shift="sub" font-size="8">vào</tspan></text
             >
             <polyline points="135,75 80,75 80,175" fill="none" stroke="#334155" stroke-width="2" />
@@ -309,7 +309,9 @@
         <strong
           >{outs.ledOn
             ? `sáng, I ≈ ${formatNumber(outs.ledCurrent * 1000, 1)} mA`
-            : 'tắt (phân cực ngược)'}</strong
+            : result.out > 0
+              ? 'tắt (điện áp chưa đủ để LED sáng)'
+              : 'tắt (phân cực ngược)'}</strong
         >
       </p>
     </div>

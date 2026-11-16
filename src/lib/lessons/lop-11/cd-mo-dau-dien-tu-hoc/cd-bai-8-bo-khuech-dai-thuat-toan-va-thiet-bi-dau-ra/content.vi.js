@@ -116,7 +116,7 @@ export default {
             'Relay điện từ: một công tắc điều khiển bằng điện, gồm cuộn dây quấn trên lõi sắt và các tiếp điểm. Dòng điện nhỏ từ op-amp chạy qua cuộn dây biến nó thành nam châm điện, hút tiếp điểm đóng lại mạch tải có dòng lớn, điện áp cao (bóng đèn $220$ V, động cơ, máy bơm). Khác công tắc thường, relay đóng ngắt tự động và mạch điều khiển được cách li với mạch tải. Một diode mắc nối tiếp với cuộn dây để relay chỉ đóng khi $U_{ra}$ dương.',
             'Đèn LED (diode phát quang): chỉ sáng khi được phân cực thuận, tức lối ra op-amp phải dương so với đất (nếu LED nối từ lối ra xuống đất). Phải mắc nối tiếp một điện trở để hạn chế dòng điện qua LED: $R = \\dfrac{U_{ra} - U_{LED}}{I}$. Hai LED khác màu mắc song song ngược chiều cho biết lối ra đang dương hay âm.',
             'Loa: biến tín hiệu điện xoay chiều (đã được khuếch đại) thành âm thanh.',
-            'Đồng hồ đo: một vôn kế nối vào lối ra có thể hiển thị trực tiếp đại lượng mà cảm biến đo (nhiệt độ, độ rọi...) nếu ta hiệu chuẩn lại thang chia và đơn vị của nó.',
+            'Đồng hồ đo: một vôn kế nối vào lối ra có thể hiển thị trực tiếp đại lượng mà cảm biến đo (nhiệt độ, độ rọi...). Op-amp khuếch đại điện áp nhỏ từ cảm biến lên cỡ thang đo của vôn kế; vì vôn kế chỉ vôn chứ không chỉ độ C hay lux, ta phải chia lại thang đo và đổi đơn vị trên mặt đồng hồ (hiệu chuẩn) bằng cách so với một dụng cụ đo chuẩn.',
           ],
         },
       ],
@@ -268,6 +268,23 @@ export default {
       hints: ['Dòng điều khiển nhỏ, dòng tải lớn; hai mạch được cách li với nhau.'],
       solution:
         'Dòng điều khiển nhỏ từ op-amp chạy qua cuộn dây, biến nó thành nam châm điện hút tiếp điểm. Các tiếp điểm thuộc mạch tải, mang dòng điện lớn của đèn hay động cơ.',
+    },
+    {
+      type: 'choice',
+      prompt:
+        'Lối ra của mạch so sánh dùng op-amp chuyển giữa $+12$ V và $-12$ V. Nếu nối lối ra thẳng vào cuộn dây relay, không qua diode, thì relay',
+      options: [
+        'có dòng điện qua cuộn dây ở cả hai trạng thái nên luôn đóng, không còn điều khiển tự động được',
+        'chỉ đóng khi lối ra dương, như khi có diode',
+        'chỉ đóng khi lối ra âm',
+        'không bao giờ đóng',
+      ],
+      answer: 0,
+      hints: [
+        'Khi $U_{ra} = -12$ V, cuộn dây có dòng điện chạy qua không? Nam châm điện có hút được tiếp điểm khi dòng điện đổi chiều không?',
+      ],
+      solution:
+        'Không có diode, cuộn dây có dòng điện cả khi $U_{ra} = +12$ V lẫn khi $U_{ra} = -12$ V (chỉ khác chiều), và nam châm điện hút tiếp điểm với dòng điện theo chiều nào cũng được. Relay vì thế luôn đóng. Diode chặn dòng khi lối ra âm, nên relay chỉ đóng khi $U_{ra}$ dương.',
     },
     {
       type: 'number',
