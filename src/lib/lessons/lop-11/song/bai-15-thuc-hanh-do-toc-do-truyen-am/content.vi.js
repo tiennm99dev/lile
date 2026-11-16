@@ -115,7 +115,7 @@ export default {
         '$\\overline{d} = \\dfrac{34{,}2 + 34{,}6 + 34{,}4}{3} = 34{,}4$ cm.',
         'Các độ lệch $0{,}2$; $0{,}2$; $0$ nên $\\Delta d = \\dfrac{0{,}4}{3} \\approx 0{,}13$ cm.',
         '$\\overline{v} = 2\\overline{d}f = 2 \\cdot 0{,}344 \\cdot 500 = 344$ m/s.',
-        '$\\delta v = \\dfrac{\\Delta d}{\\overline{d}} = \\dfrac{0{,}13}{34{,}4} \\approx 0{,}0039$; $\\Delta v = 0{,}0039 \\cdot 344 \\approx 1{,}3$ m/s.',
+        '$\\delta v = \\dfrac{\\Delta d}{\\overline{d}} = \\dfrac{0{,}4}{3 \\cdot 34{,}4} \\approx 0{,}0039$; $\\Delta v = \\delta v \\cdot \\overline{v} \\approx 0{,}0039 \\cdot 344 \\approx 1{,}3$ m/s.',
       ],
       answer: '$v = 344 \\pm 1{,}3$ m/s.',
     },

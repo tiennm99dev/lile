@@ -20,7 +20,8 @@ describe('wave checking bench', () => {
     const r = standingReport('co-dinh', 1, 20, 25);
     expect(r.standing).toBe(false);
     expect(r.text).toContain('$20$ Hz; $30$ Hz');
-    expect(standingReport('tu-do', 0.5, 20, 10).text).toContain('$1$ bụng và $1$ nút');
+    const free = standingReport('tu-do', 0.5, 20, 10).text;
+    expect(free).toContain('$1$ bụng và $1$ nút (kể cả đầu cố định)');
   });
 
   it('counts maxima and minima between the sources', () => {

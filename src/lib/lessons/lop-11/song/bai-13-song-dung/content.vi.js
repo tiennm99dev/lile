@@ -80,10 +80,8 @@ export default {
           title: 'Dây có một đầu cố định, một đầu tự do',
           text: '$l = (2k + 1)\\dfrac{\\lambda}{4}$ với $k = 0, 1, 2, \\ldots$ Khi đó trên dây có $k + 1$ bụng và $k + 1$ nút; chiều dài dây bằng một số lẻ lần $\\dfrac{\\lambda}{4}$.',
         },
-        {
-          type: 'tex',
-          tex: '\\text{Hai đầu cố định: } f = k\\dfrac{v}{2l} \\qquad \\text{Một đầu tự do: } f = (2k + 1)\\dfrac{v}{4l}',
-        },
+        { type: 'tex', tex: '\\text{Hai đầu cố định: } f = k\\dfrac{v}{2l}' },
+        { type: 'tex', tex: '\\text{Một đầu tự do: } f = (2k + 1)\\dfrac{v}{4l}' },
         {
           type: 'p',
           text: 'Với một dây đã cho ($l$ và $v$ không đổi), sóng dừng chỉ xuất hiện ở những tần số xác định. Với dây hai đầu cố định, các tần số đó là $f_1 = \\dfrac{v}{2l}$, $2f_1$, $3f_1$, …',
@@ -111,7 +109,7 @@ export default {
         '$\\lambda = \\dfrac{2L}{3} = \\dfrac{2 \\cdot 1{,}2}{3} = 0{,}8$ m.',
         '$v = \\lambda f = 0{,}8 \\cdot 13{,}3 = 10{,}64$ m/s.',
       ],
-      answer: '$\\lambda = 0{,}8$ m; $v \\approx 10{,}64$ m/s.',
+      answer: '$\\lambda = 0{,}8$ m; $v = 10{,}64$ m/s.',
     },
     {
       problem:
@@ -220,7 +218,7 @@ export default {
     {
       type: 'number',
       prompt:
-        'Một sợi dây hai đầu cố định có sóng dừng ở tần số $f_1 = 12$ Hz với $1$ bụng. Giữ nguyên lực căng (tốc độ truyền sóng không đổi), cần tăng tần số lên bao nhiêu héc để trên dây có $3$ bụng?',
+        'Một sợi dây hai đầu cố định có sóng dừng ở tần số $f_1 = 12$ Hz với $1$ bụng. Giữ nguyên lực căng (tốc độ truyền sóng không đổi), phải tăng tần số tới giá trị bao nhiêu (theo Hz) để trên dây có $3$ bụng?',
       answer: 36,
       unit: 'Hz',
       hints: ['$f = k\\dfrac{v}{2l}$ tỉ lệ với số bụng $k$.'],

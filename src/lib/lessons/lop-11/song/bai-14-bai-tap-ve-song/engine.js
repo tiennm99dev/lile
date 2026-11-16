@@ -36,7 +36,7 @@ export function standingReport(end, length, speed, f) {
     return {
       standing: true,
       drawable: mode.n <= MAX_LOOPS,
-      text: `${head} Có sóng dừng với $${counts.antinodes}$ bụng và $${counts.nodes}$ nút (kể cả hai đầu dây).`,
+      text: `${head} Có sóng dừng với $${counts.antinodes}$ bụng và $${counts.nodes}$ nút (${end === 'co-dinh' ? 'kể cả hai đầu dây' : 'kể cả đầu cố định'}).`,
     };
   }
   const near = [mode.n - 1, mode.n, mode.n + 1]
