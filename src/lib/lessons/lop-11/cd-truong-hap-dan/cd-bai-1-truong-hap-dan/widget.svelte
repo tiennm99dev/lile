@@ -78,6 +78,11 @@
   const force = $derived(forceOnTest(balls, probe, testMass));
   const tooClose = $derived(balls.some((b) => Math.hypot(b.x - probe.x, b.y - probe.y) < 0.75));
   const balanced = $derived(nearBalance(balls, probe));
+  /** The pulls cancel exactly (a symmetric spot), so the force has no direction. */
+  const cancelled = $derived(field.size < 1e-12);
+  const forceWords = $derived(
+    cancelled ? 'bằng 0' : `khoảng ${sciText(force.size)} niutơn, hướng ${directionWords(force)}`,
+  );
   const fLen = $derived(tooClose ? 0 : arrowPx(force.size, G_REF * testMass, 70));
   const fUnit = $derived(
     force.size > 0 ? { x: force.x / force.size, y: force.y / force.size } : { x: 0, y: 0 },
@@ -157,7 +162,9 @@
         text: 'Vật thử đang chạm vào một quả cầu; hãy kéo nó ra xa hơn một chút.',
       };
     }
-    const f = `Vật thử $m = ${testMass}$ kg chịu lực hấp dẫn tổng hợp $F \\approx ${sciTex(force.size)}$ N, hướng ${directionWords(force)}.`;
+    const f = cancelled
+      ? `Vật thử $m = ${testMass}$ kg chịu lực hấp dẫn tổng hợp $F = 0$.`
+      : `Vật thử $m = ${testMass}$ kg chịu lực hấp dẫn tổng hợp $F \\approx ${sciTex(force.size)}$ N, hướng ${directionWords(force)}.`;
     if (balanced) {
       return {
         tone: /** @type {const} */ ('ok'),
@@ -179,7 +186,7 @@
       viewBox="0 0 {W} {H}"
       class="mx-auto block w-full max-w-xl touch-none select-none rounded-xl bg-slate-50"
       role="group"
-      aria-label={`Đường sức trường hấp dẫn của ${balls.length} quả cầu. Lực hấp dẫn lên vật thử khoảng ${sciText(force.size)} niutơn.`}
+      aria-label={`Đường sức trường hấp dẫn của ${balls.length} quả cầu. Lực hấp dẫn lên vật thử ${forceWords}.`}
     >
       {#each [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5] as x (x)}
         <line x1={px(x)} x2={px(x)} y1="0" y2={H} stroke="#e2e8f0" />
@@ -267,7 +274,7 @@
         aria-valuemin={-HALF_X}
         aria-valuemax={HALF_X}
         aria-valuenow={probe.x}
-        aria-valuetext={`Lực hấp dẫn lên vật thử khoảng ${sciText(force.size)} niutơn, hướng ${directionWords(force)}`}
+        aria-valuetext={`Lực hấp dẫn lên vật thử ${forceWords}`}
         use:draggable={dragOf(() => probe, moveProbe)}
       >
         <circle

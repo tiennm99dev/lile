@@ -40,7 +40,7 @@ export function fieldStrength(mass, r) {
 }
 
 /**
- * Gravitational potential φ = −GM/r, zero at infinity, in J/kg.
+ * Gravitational potential Φ = −GM/r, zero at infinity, in J/kg.
  * @param {number} mass kg @param {number} r m
  */
 export function potential(mass, r) {

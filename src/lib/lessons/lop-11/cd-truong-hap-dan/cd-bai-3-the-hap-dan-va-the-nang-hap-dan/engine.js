@@ -5,6 +5,7 @@
  * GM = 1 and R = 1. The launch point is the top of the Earth (0; 1) and the
  * body is thrown to the right, `angle` degrees above the horizontal.
  */
+import { tidy } from '#lib/core/number-format.js';
 import { BODIES, escapeSpeed, orbitSpeed } from '../_shared/gravity.js';
 
 const { mass, radius } = BODIES.earth;
@@ -111,11 +112,12 @@ export function apogee(speed, angle) {
 }
 
 /**
- * Mechanical energy per kilogram at launch, ½v² − GM/R, in MJ/kg.
+ * Mechanical energy per kilogram at launch, ½v² − GM/R, in MJ/kg, with
+ * binary noise rounded away so a launch at exactly v_II reads as zero.
  * @param {number} speed km/s
  */
 export function energyPerKg(speed) {
-  return (speed * speed) / 2 - V1 * V1;
+  return tidy((speed * speed) / 2 - V1 * V1);
 }
 
 /**

@@ -1,13 +1,13 @@
 /** @type {import('#lib/core/content-schema.js').LessonContent} */
 export default {
   summary:
-    'Thế năng hấp dẫn Wt = −GMm/r (bằng 0 ở xa vô cùng) và thế hấp dẫn φ = −GM/r đặc trưng cho trường hấp dẫn về năng lượng; từ đó tính được tốc độ vũ trụ cấp I 7,9 km/s, cấp II 11,2 km/s và quỹ đạo vệ tinh địa tĩnh.',
+    'Thế năng hấp dẫn Wt = −GMm/r (bằng 0 ở xa vô cùng) và thế hấp dẫn Φ = −GM/r đặc trưng cho trường hấp dẫn về năng lượng; từ đó tính được tốc độ vũ trụ cấp I 7,9 km/s, cấp II 11,2 km/s và quỹ đạo vệ tinh địa tĩnh.',
   intro:
     'Việt Nam đã có những vệ tinh viễn thông bay ở độ cao khoảng $36\\,000$ km, lúc nào cũng "treo" trên cùng một chỗ của bầu trời. Phải phóng vệ tinh với tốc độ bao nhiêu để nó không rơi trở lại? Và cần bao nhiêu năng lượng để một con tàu rời hẳn Trái Đất?',
   objectives: [
     'Nêu được công của trọng lực không phụ thuộc hình dạng đường đi.',
     'Viết được biểu thức thế năng hấp dẫn $W_t = -\\dfrac{GMm}{r}$ với gốc thế năng ở xa vô cùng.',
-    'Nêu được định nghĩa thế hấp dẫn $\\varphi = -\\dfrac{GM}{r}$ và đơn vị J/kg.',
+    'Nêu được định nghĩa thế hấp dẫn $\\Phi = -\\dfrac{GM}{r}$ và đơn vị J/kg.',
     'Vận dụng được để tính tốc độ vũ trụ cấp I, cấp II và độ cao quỹ đạo vệ tinh địa tĩnh.',
   ],
   sections: [
@@ -61,16 +61,16 @@ export default {
           type: 'callout',
           tone: 'definition',
           title: 'Thế hấp dẫn',
-          text: 'Thế hấp dẫn tại một điểm là đại lượng đặc trưng cho trường hấp dẫn về phương diện năng lượng, đo bằng thế năng hấp dẫn của một đơn vị khối lượng đặt tại điểm đó: $\\varphi = \\dfrac{W_t}{m}$.',
+          text: 'Thế hấp dẫn tại một điểm là đại lượng đặc trưng cho trường hấp dẫn về phương diện năng lượng, đo bằng thế năng hấp dẫn của một đơn vị khối lượng đặt tại điểm đó: $\\Phi = \\dfrac{W_t}{m}$.',
         },
-        { type: 'tex', tex: '\\varphi = -\\dfrac{GM}{r}' },
+        { type: 'tex', tex: '\\Phi = -\\dfrac{GM}{r}' },
         {
           type: 'list',
           items: [
             'Đơn vị của thế hấp dẫn là J/kg; vì $1\\ \\text{J} = 1\\ \\text{kg} \\cdot \\text{m}^2/\\text{s}^2$ nên $1\\ \\text{J/kg} = 1\\ \\text{m}^2/\\text{s}^2$.',
             'Thế hấp dẫn chỉ phụ thuộc vật gây ra trường ($M$) và vị trí ($r$), không phụ thuộc vật đặt vào.',
             'Thế hấp dẫn là đại lượng vô hướng: thế hấp dẫn của nhiều vật tại một điểm bằng tổng đại số các thế hấp dẫn của từng vật.',
-            'Ở mặt đất, $\\varphi = -\\dfrac{GM}{R} \\approx -6{,}26 \\cdot 10^7$ J/kg.',
+            'Ở mặt đất, $\\Phi = -\\dfrac{GM}{R} \\approx -6{,}26 \\cdot 10^7$ J/kg.',
           ],
         },
       ],
@@ -147,12 +147,12 @@ export default {
       problem:
         'Tính thế hấp dẫn tại một điểm ở bề mặt Trái Đất ($M = 6{,}0 \\cdot 10^{24}$ kg, $R = 6\\,400$ km) và ở bề mặt Mặt Trăng ($M = 7{,}2 \\cdot 10^{22}$ kg, $R = 1\\,738$ km).',
       steps: [
-        'Trái Đất: $\\varphi = -\\dfrac{GM}{R} = -\\dfrac{6{,}68 \\cdot 10^{-11} \\cdot 6{,}0 \\cdot 10^{24}}{6{,}4 \\cdot 10^6} \\approx -6{,}26 \\cdot 10^7$ J/kg.',
-        'Mặt Trăng: $\\varphi = -\\dfrac{6{,}68 \\cdot 10^{-11} \\cdot 7{,}2 \\cdot 10^{22}}{1{,}738 \\cdot 10^6} \\approx -2{,}77 \\cdot 10^6$ J/kg.',
+        'Trái Đất: $\\Phi = -\\dfrac{GM}{R} = -\\dfrac{6{,}68 \\cdot 10^{-11} \\cdot 6{,}0 \\cdot 10^{24}}{6{,}4 \\cdot 10^6} \\approx -6{,}26 \\cdot 10^7$ J/kg.',
+        'Mặt Trăng: $\\Phi = -\\dfrac{6{,}68 \\cdot 10^{-11} \\cdot 7{,}2 \\cdot 10^{22}}{1{,}738 \\cdot 10^6} \\approx -2{,}77 \\cdot 10^6$ J/kg.',
         'Độ lớn ở Trái Đất gấp khoảng $23$ lần: muốn đưa $1$ kg vật chất từ bề mặt ra xa vô cùng, ở Trái Đất cần công lớn hơn rất nhiều.',
       ],
       answer:
-        '$\\varphi_{\\text{TĐ}} \\approx -6{,}26 \\cdot 10^7$ J/kg; $\\varphi_{\\text{MT}} \\approx -2{,}77 \\cdot 10^6$ J/kg.',
+        '$\\Phi_{\\text{TĐ}} \\approx -6{,}26 \\cdot 10^7$ J/kg; $\\Phi_{\\text{MT}} \\approx -2{,}77 \\cdot 10^6$ J/kg.',
     },
     {
       problem:
@@ -196,7 +196,7 @@ export default {
       type: 'text',
       prompt: 'Đơn vị của thế hấp dẫn trong hệ SI là gì? (Viết kí hiệu.)',
       accept: ['J/kg', 'J.kg-1', 'jun trên kilôgam', 'm2/s2', 'm²/s²', 'm^2/s^2'],
-      hints: ['$\\varphi = \\dfrac{W_t}{m}$: đơn vị năng lượng chia đơn vị khối lượng.'],
+      hints: ['$\\Phi = \\dfrac{W_t}{m}$: đơn vị năng lượng chia đơn vị khối lượng.'],
       solution:
         'J/kg. Vì $1\\ \\text{J} = 1\\ \\text{kg} \\cdot \\text{m}^2/\\text{s}^2$ nên J/kg cũng bằng $\\text{m}^2/\\text{s}^2$.',
     },
@@ -211,7 +211,7 @@ export default {
         '$v_{\\text{II}} = \\sqrt{\\dfrac{2GM}{R}}$. So với $v_{\\text{I}}$ thì gấp mấy lần?',
       ],
       solution:
-        '$v_{\\text{II}} = \\sqrt 2\\, v_{\\text{I}} \\approx 1{,}414 \\cdot 1{,}664 \\approx 2{,}35$ km/s.',
+        '$v_{\\text{II}} = \\sqrt 2\\, v_{\\text{I}} \\approx 1{,}414 \\cdot 1{,}66 \\approx 2{,}35$ km/s.',
     },
     {
       type: 'number',
@@ -251,7 +251,7 @@ export default {
       tolerance: 0.1,
       hints: ['Tại trung điểm, khoảng cách đến hai tâm bằng nhau.'],
       solution:
-        'Với cùng $r$: $\\dfrac{\\varphi_{\\text{TĐ}}}{\\varphi_{\\text{MT}}} = \\dfrac{M_{\\text{TĐ}}}{M_{\\text{MT}}} = \\dfrac{6{,}0 \\cdot 10^{24}}{7{,}2 \\cdot 10^{22}} \\approx 83{,}3$.',
+        'Với cùng $r$: $\\dfrac{\\Phi_{\\text{TĐ}}}{\\Phi_{\\text{MT}}} = \\dfrac{M_{\\text{TĐ}}}{M_{\\text{MT}}} = \\dfrac{6{,}0 \\cdot 10^{24}}{7{,}2 \\cdot 10^{22}} \\approx 83{,}3$.',
     },
     {
       type: 'number',
@@ -302,7 +302,7 @@ export default {
   takeaways: [
     'Công của trọng lực và của lực hấp dẫn không phụ thuộc hình dạng đường đi, chỉ phụ thuộc điểm đầu và điểm cuối.',
     'Thế năng hấp dẫn $W_t = -\\dfrac{GMm}{r}$ (gốc ở xa vô cùng), luôn âm; gần mặt đất, độ tăng thế năng khi lên cao $h$ là $mgh$.',
-    'Thế hấp dẫn $\\varphi = \\dfrac{W_t}{m} = -\\dfrac{GM}{r}$, đơn vị J/kg $= \\text{m}^2/\\text{s}^2$, đặc trưng cho trường hấp dẫn về năng lượng.',
+    'Thế hấp dẫn $\\Phi = \\dfrac{W_t}{m} = -\\dfrac{GM}{r}$, đơn vị J/kg $= \\text{m}^2/\\text{s}^2$, đặc trưng cho trường hấp dẫn về năng lượng.',
     'Tốc độ vũ trụ: cấp I $v_{\\text{I}} = \\sqrt{\\dfrac{GM}{R}} \\approx 7{,}9$ km/s, cấp II $v_{\\text{II}} = \\sqrt{\\dfrac{2GM}{R}} \\approx 11{,}2$ km/s, cấp III khoảng $16{,}7$ km/s.',
     'Vệ tinh địa tĩnh bay trong mặt phẳng xích đạo với chu kì khoảng $24$ giờ, ở độ cao khoảng $36\\,000$ km.',
   ],

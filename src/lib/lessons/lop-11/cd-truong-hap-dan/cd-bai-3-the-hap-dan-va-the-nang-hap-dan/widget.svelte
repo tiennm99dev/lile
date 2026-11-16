@@ -96,7 +96,7 @@
     };
   });
   const energyText = $derived(
-    `Cơ năng của mỗi kilôgam lúc phóng: $\\dfrac{v^2}{2} + \\varphi = ${numTex(energy, 1)}$ MJ/kg, với thế hấp dẫn ở mặt đất $\\varphi = -\\dfrac{GM}{R} \\approx ${numTex(-V1 * V1, 1)}$ MJ/kg. ${energy < 0 ? 'Cơ năng âm: vật bị trường hấp dẫn giữ lại.' : 'Cơ năng không âm: vật thoát ra xa vô cùng.'}`,
+    `Cơ năng của mỗi kilôgam lúc phóng: $\\dfrac{v^2}{2} + \\Phi = ${numTex(energy, 1)}$ MJ/kg, với thế hấp dẫn ở mặt đất $\\Phi = -\\dfrac{GM}{R} \\approx ${numTex(-V1 * V1, 1)}$ MJ/kg. ${energy < 0 ? 'Cơ năng âm: vật bị trường hấp dẫn giữ lại.' : 'Cơ năng không âm: vật thoát ra xa vô cùng.'}`,
   );
 </script>
 

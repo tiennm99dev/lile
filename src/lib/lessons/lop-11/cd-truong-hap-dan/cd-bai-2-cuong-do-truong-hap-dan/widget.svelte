@@ -15,7 +15,7 @@
   const CX = 44;
   const CY = 65;
   /** Pixels per planet radius. */
-  const UNIT = 38;
+  const UNIT = 37;
   const STEP = 0.05;
   const SAT_MASS = 1000;
 
@@ -138,8 +138,12 @@
         <rect x={satX - 19} y={CY - 3} width="10" height="6" fill="#38bdf8" />
         <rect x={satX + 9} y={CY - 3} width="10" height="6" fill="#38bdf8" />
       </g>
-      <text x={satX} y={CY - 14} font-size="11" fill="#e2e8f0" text-anchor="middle"
-        >g ≈ {formatNumber(g, 2)} N/kg</text
+      <text
+        x={Math.min(satX, W - 4)}
+        y={CY - 14}
+        font-size="11"
+        fill="#e2e8f0"
+        text-anchor={satX > W - 44 ? 'end' : 'middle'}>g ≈ {formatNumber(g, 2)} N/kg</text
       >
     </svg>
     <p class="px-2 pt-2 text-sm text-slate-600">

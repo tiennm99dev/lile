@@ -56,7 +56,7 @@ export default {
           type: 'callout',
           tone: 'definition',
           title: 'Trường hấp dẫn',
-          text: 'Trường hấp dẫn là một dạng vật chất tồn tại xung quanh mọi vật có khối lượng, tác dụng lực hấp dẫn lên vật khác có khối lượng đặt trong nó. Trường hấp dẫn của Trái Đất còn gọi là trường trọng lực (trọng trường).',
+          text: 'Trường hấp dẫn là một dạng vật chất tồn tại xung quanh mọi vật có khối lượng, tác dụng lực hấp dẫn lên vật khác có khối lượng đặt trong nó. Trường hấp dẫn của Trái Đất ở gần mặt đất gọi là trường trọng lực (trọng trường), một trường hợp riêng của trường hấp dẫn.',
         },
         {
           type: 'list',
@@ -290,7 +290,7 @@ export default {
   takeaways: [
     'Định luật vạn vật hấp dẫn: $F = G\\dfrac{m_1 m_2}{r^2}$, với $G = 6{,}68 \\cdot 10^{-11}\\ \\text{N} \\cdot \\text{m}^2/\\text{kg}^2$; áp dụng cho chất điểm và quả cầu đồng chất ($r$ là khoảng cách hai tâm).',
     'Hai lực hấp dẫn giữa hai vật là hai lực trực đối, luôn là lực hút.',
-    'Trường hấp dẫn là dạng vật chất tồn tại quanh mọi vật có khối lượng, tác dụng lực hấp dẫn lên vật có khối lượng đặt trong nó; trường hấp dẫn của Trái Đất là trọng trường.',
+    'Trường hấp dẫn là dạng vật chất tồn tại quanh mọi vật có khối lượng, tác dụng lực hấp dẫn lên vật có khối lượng đặt trong nó; trường hấp dẫn của Trái Đất ở gần mặt đất là trường trọng lực (trọng trường).',
     'Đường sức trường hấp dẫn của quả cầu đồng chất là các đường thẳng hướng vào tâm; gần mặt đất, trong vùng nhỏ, trường hấp dẫn coi như đều.',
     'Gia tốc rơi tự do ở độ cao $h$: $g = \\dfrac{GM}{(R + h)^2}$, giảm dần khi lên cao.',
   ],

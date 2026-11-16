@@ -10,6 +10,7 @@ describe('cosmic speeds of the Earth', () => {
 
   it('give zero mechanical energy at the escape speed', () => {
     expect(energyPerKg(V2)).toBeCloseTo(0, 9);
+    expect(energyPerKg(V2) < 0).toBe(false);
     expect(energyPerKg(0)).toBeCloseTo(-62.625, 9);
   });
 });
