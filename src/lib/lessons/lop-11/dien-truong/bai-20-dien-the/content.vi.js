@@ -22,7 +22,7 @@ export default {
           type: 'callout',
           tone: 'definition',
           title: 'Điện thế',
-          text: 'Điện thế tại một điểm $M$ trong điện trường là đại lượng đặc trưng cho điện trường tại điểm đó về thế năng, đo bằng thương số của công lực điện làm dịch chuyển điện tích $q$ từ $M$ ra vô cực và độ lớn của $q$: $$V_M = \\dfrac{W_M}{q} = \\dfrac{A_{M\\infty}}{q}.$$ Đơn vị của điện thế là vôn (V): $1\\ \\text{V} = 1\\ \\text{J/C}$.',
+          text: 'Điện thế tại một điểm $M$ trong điện trường là đại lượng đặc trưng cho điện trường tại điểm đó về thế năng, đo bằng thương số của công lực điện làm dịch chuyển điện tích $q$ từ $M$ ra vô cực và điện tích $q$: $$V_M = \\dfrac{W_M}{q} = \\dfrac{A_{M\\infty}}{q}.$$ Đơn vị của điện thế là vôn (V): $1\\ \\text{V} = 1\\ \\text{J/C}$.',
         },
         {
           type: 'list',

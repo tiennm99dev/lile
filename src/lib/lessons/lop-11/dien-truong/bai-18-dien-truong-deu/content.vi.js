@@ -95,8 +95,8 @@ export default {
       steps: [
         '$E = \\dfrac{U}{d} = \\dfrac{100}{0{,}02} = 5\\,000$ V/m.',
         '$a = \\dfrac{eE}{m} = \\dfrac{1{,}6 \\cdot 10^{-19} \\cdot 5\\,000}{9{,}1 \\cdot 10^{-31}} \\approx 8{,}79 \\cdot 10^{14}$ m/s².',
-        'Thời gian bay qua hai bản: $t = \\dfrac{\\ell}{v_0} = \\dfrac{0{,}05}{3 \\cdot 10^7} \\approx 1{,}67 \\cdot 10^{-9}$ s.',
-        'Độ lệch: $y = \\dfrac{at^2}{2} \\approx \\dfrac{8{,}79 \\cdot 10^{14} \\cdot (1{,}67 \\cdot 10^{-9})^2}{2} \\approx 1{,}22 \\cdot 10^{-3}$ m $\\approx 1{,}22$ mm.',
+        'Thời gian bay qua hai bản: $t = \\dfrac{\\ell}{v_0} = \\dfrac{0{,}05}{3 \\cdot 10^7} = \\dfrac{5}{3} \\cdot 10^{-9}$ s $\\approx 1{,}67 \\cdot 10^{-9}$ s.',
+        'Độ lệch: $y = \\dfrac{at^2}{2} = \\dfrac{8{,}79 \\cdot 10^{14} \\cdot \\left(\\frac{5}{3} \\cdot 10^{-9}\\right)^2}{2} \\approx 1{,}22 \\cdot 10^{-3}$ m $\\approx 1{,}22$ mm.',
         '$y < \\dfrac{d}{2} = 1$ cm nên electron không chạm bản.',
       ],
       answer: 'Electron ra khỏi hai bản, lệch khoảng $1{,}22$ mm về phía bản dương.',

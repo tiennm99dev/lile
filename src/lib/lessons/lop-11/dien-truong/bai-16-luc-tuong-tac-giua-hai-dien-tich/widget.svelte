@@ -35,6 +35,10 @@
   );
   // Direction of the force on q1: toward q2 when they attract.
   const dir = $derived(pair.attract ? pair.unit : { x: -pair.unit.x, y: -pair.unit.y });
+  // Names sit above the middle of each arrow, not at the tips, so the two names
+  // stay apart when attracting arrows meet in the gap.
+  const nameDx = $derived(-(dir.x * len) / 2 - 10);
+  const nameDy = $derived((dir.y * len) / 2 - 10);
   const now = $derived({ q1, q2, r: pair.r, eps });
   const change = $derived(
     saved && !pair.none && saved.q1 * saved.q2 !== 0 ? compare(now, saved) : null,
@@ -128,7 +132,7 @@
       />
       <text
         x={(board.px(a.x) + board.px(b.x)) / 2}
-        y={(board.py(a.y) + board.py(b.y)) / 2 + 26}
+        y={Math.min((board.py(a.y) + board.py(b.y)) / 2 + 42, board.height - 4)}
         text-anchor="middle"
         font-size="12"
         fill="#475569">r = {formatNumber(pair.r, 1)} cm</text
@@ -141,8 +145,8 @@
           y2={board.py(a.y) - dir.y * len}
           color="#7c3aed"
           label="F₂₁"
-          labelDx={-10}
-          labelDy={-12}
+          labelDx={nameDx}
+          labelDy={nameDy}
         />
         <ForceArrow
           x1={board.px(b.x)}
@@ -151,8 +155,8 @@
           y2={board.py(b.y) + dir.y * len}
           color="#059669"
           label="F₁₂"
-          labelDx={-10}
-          labelDy={-12}
+          labelDx={nameDx + dir.x * len}
+          labelDy={nameDy - dir.y * len}
         />
       {/if}
       {#each ['a', 'b'] as which (which)}
@@ -162,7 +166,7 @@
           class="drag-handle cursor-move outline-none"
           role="slider"
           tabindex="0"
-          aria-label={`Điện tích ${which === 'a' ? 'q1' : 'q2'}: kéo hoặc dùng phím mũi tên`}
+          aria-label={`Điện tích ${which === 'a' ? 'q₁' : 'q₂'}: kéo hoặc dùng phím mũi tên`}
           aria-valuemin={-board.halfX}
           aria-valuemax={board.halfX}
           aria-valuenow={p.x}
