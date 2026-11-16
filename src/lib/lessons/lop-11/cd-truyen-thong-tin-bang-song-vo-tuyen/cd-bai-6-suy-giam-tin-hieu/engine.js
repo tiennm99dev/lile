@@ -3,6 +3,7 @@
  * gain of amplifiers placed along it, and the lowest level the signal
  * reaches, compared with the level where it sinks into the noise.
  */
+import { tidy } from '#lib/core/number-format.js';
 
 /**
  * A power ratio in decibels, 10·lg(P₂/P₁).
@@ -85,3 +86,18 @@ export function fewestAmps(alpha, length) {
  */
 export const levelAt = (alpha, amps, x) =>
   amps.filter((a) => a > 0 && a <= x).length * GAIN - alpha * x;
+
+/**
+ * A positive number as mantissa · 10^exponent with 1 ≤ mantissa < 10,
+ * the mantissa rounded to two decimals: 2.3e-8 → { mantissa: 2.3, exponent: -8 }.
+ * @param {number} x
+ */
+export function scientific(x) {
+  let exponent = Math.floor(Math.log10(x));
+  let mantissa = tidy(x / 10 ** exponent, 2);
+  if (mantissa >= 10) {
+    mantissa /= 10;
+    exponent += 1;
+  }
+  return { mantissa, exponent };
+}

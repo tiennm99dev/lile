@@ -1,6 +1,6 @@
 <script>
   import FeedbackNote from '#lib/core/feedback-note.svelte';
-  import { formatNumber } from '#lib/core/number-format.js';
+  import { formatNumber, numTex } from '#lib/core/number-format.js';
   import SegmentedControl from '#lib/core/segmented-control.svelte';
   import SliderField from '#lib/core/slider-field.svelte';
   import { button, card } from '#lib/core/ui.js';
@@ -53,9 +53,15 @@
           text: `Độ biến điệu lớn hơn 1: đường bao bị gập lại qua trục, không còn giống tín hiệu âm. Máy thu sẽ cho âm thanh méo (quá biến điệu).`,
         };
       }
+      if (m === 0) {
+        return {
+          tone: /** @type {const} */ ('warn'),
+          text: 'Độ biến điệu bằng 0: biên độ sóng ra không đổi, sóng ra chỉ là sóng mang, không mang thông tin gì. Tăng độ biến điệu.',
+        };
+      }
       return {
         tone: /** @type {const} */ ('info'),
-        text: `AM: biên độ sóng thay đổi từ $${formatNumber(r.ampMin)}$ đến $${formatNumber(r.ampMax)}$ (biên độ sóng mang là $1$), theo đúng dạng tín hiệu âm (đường bao nét đứt). Tần số luôn bằng tần số sóng mang $${fc}$ kHz.`,
+        text: `AM: biên độ sóng thay đổi từ $${numTex(r.ampMin)}$ đến $${numTex(r.ampMax)}$ (biên độ sóng mang là $1$), theo đúng dạng tín hiệu âm (đường bao nét đứt). Tần số luôn bằng tần số sóng mang $${fc}$ kHz.`,
       };
     }
     if (df === 0) {
@@ -66,7 +72,7 @@
     }
     return {
       tone: /** @type {const} */ ('info'),
-      text: `FM: biên độ sóng không đổi. Tần số thay đổi từ $${formatNumber(r.fMin)}$ kHz (chỗ sóng thưa, tín hiệu âm ở đáy) đến $${formatNumber(r.fMax)}$ kHz (chỗ sóng dày, tín hiệu âm ở đỉnh).`,
+      text: `FM: biên độ sóng không đổi. Tần số thay đổi từ $${numTex(r.fMin)}$ kHz (chỗ sóng thưa, tín hiệu âm ở đáy) đến $${numTex(r.fMax)}$ kHz (chỗ sóng dày, tín hiệu âm ở đỉnh).`,
     };
   });
 

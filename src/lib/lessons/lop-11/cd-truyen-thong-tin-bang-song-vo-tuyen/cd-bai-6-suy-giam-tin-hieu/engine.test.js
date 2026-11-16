@@ -9,6 +9,7 @@ import {
   levelProfile,
   powerAfter,
   ratioOf,
+  scientific,
 } from './engine.js';
 
 describe('decibels', () => {
@@ -60,5 +61,14 @@ describe('level along a cable', () => {
     const bad = CABLES.filter((c) => !(c.alpha > 0));
     expect(bad).toEqual([]);
     expect(NOISE_LEVEL).toBeLessThan(0);
+  });
+});
+
+describe('scientific', () => {
+  it('splits a power into mantissa and exponent', () => {
+    expect(scientific(2.3e-8)).toEqual({ mantissa: 2.3, exponent: -8 });
+    expect(scientific(0.002)).toEqual({ mantissa: 2, exponent: -3 });
+    expect(scientific(9.999e-5)).toEqual({ mantissa: 1, exponent: -4 });
+    expect(scientific(15800)).toEqual({ mantissa: 1.58, exponent: 4 });
   });
 });

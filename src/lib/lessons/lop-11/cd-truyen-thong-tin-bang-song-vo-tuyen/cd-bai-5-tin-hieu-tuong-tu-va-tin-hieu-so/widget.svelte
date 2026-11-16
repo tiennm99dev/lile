@@ -1,6 +1,6 @@
 <script>
   import FeedbackNote from '#lib/core/feedback-note.svelte';
-  import { formatNumber, fmt } from '#lib/core/number-format.js';
+  import { formatNumber, fmt, numTex } from '#lib/core/number-format.js';
   import SegmentedControl from '#lib/core/segmented-control.svelte';
   import SliderField from '#lib/core/slider-field.svelte';
   import { card } from '#lib/core/ui.js';
@@ -56,7 +56,7 @@
   );
 
   const note = $derived.by(() => {
-    const head = `$${fmt(levelCount(bits))}$ mức, mỗi mức cách nhau $${formatNumber(levelStep(bits), 2)}$ V; tín hiệu số khôi phục lệch tín hiệu gốc nhiều nhất khoảng $${formatNumber(error, 2)}$ V. Tốc độ bit $${fmt(fs)} \\cdot ${bits} = ${fmt(rate)}$ kbit/s.`;
+    const head = `$${numTex(levelCount(bits))}$ mức, mỗi mức cách nhau $${numTex(levelStep(bits), 2)}$ V; tín hiệu số khôi phục lệch tín hiệu gốc nhiều nhất khoảng $${numTex(error, 2)}$ V. Tốc độ bit $${numTex(fs)} \\cdot ${bits} = ${numTex(rate)}$ kbit/s.`;
     if (!enough) {
       return {
         tone: /** @type {const} */ ('warn'),

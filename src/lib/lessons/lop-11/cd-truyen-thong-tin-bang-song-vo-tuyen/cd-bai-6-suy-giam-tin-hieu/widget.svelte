@@ -1,6 +1,6 @@
 <script>
   import FeedbackNote from '#lib/core/feedback-note.svelte';
-  import { formatNumber } from '#lib/core/number-format.js';
+  import { formatNumber, numTex, sup } from '#lib/core/number-format.js';
   import SegmentedControl from '#lib/core/segmented-control.svelte';
   import SliderField from '#lib/core/slider-field.svelte';
   import { button, card } from '#lib/core/ui.js';
@@ -13,6 +13,7 @@
     levelAt,
     levelProfile,
     powerAfter,
+    scientific,
   } from './engine.js';
 
   const W = 360;
@@ -23,7 +24,6 @@
   const BOTTOM = 26;
   const DB_MIN = -50;
   const MAX_AMPS = 5;
-  const DB_TICKS = [0, -10, -20, -30, -40, -50];
 
   const CABLE_OPTIONS = CABLES.map((c) => ({
     value: c.id,
@@ -46,8 +46,18 @@
 
   /** @param {number} x km */
   const px = (x) => LEFT + (x / length) * (W - LEFT - RIGHT);
+  // The level axis runs from 0 dB, or higher when an amplifier lifts the
+  // signal above its input level, down to DB_MIN.
+  const dbTop = $derived(
+    Math.max(0, Math.ceil(Math.max(...profile.points.map((p) => p.db)) / 10) * 10),
+  );
+  const dbTicks = $derived(
+    Array.from({ length: (dbTop - DB_MIN) / 10 + 1 }, (_, i) => dbTop - i * 10).filter(
+      (d) => dbTop - DB_MIN <= 60 || d % 20 === 0,
+    ),
+  );
   /** @param {number} db */
-  const py = (db) => TOP + (Math.max(DB_MIN, db) / DB_MIN) * (H - TOP - BOTTOM);
+  const py = (db) => TOP + ((dbTop - Math.max(DB_MIN, db)) / (dbTop - DB_MIN)) * (H - TOP - BOTTOM);
   const graph = $derived(pointsAttr(profile.points.map((p) => ({ x: px(p.x), y: py(p.db) }))));
   const xTicks = $derived(
     Array.from({ length: Math.floor(length / 10) + 1 }, (_, i) => i * 10).filter(
@@ -72,11 +82,23 @@
 
   /** @param {number} db */
   const dbText = (db) => `${formatNumber(db, 1)} dB`;
+  /** True when a power in mW reads better as mantissa · 10^exponent. @param {number} mW */
+  const tiny = (mW) => mW < 0.01 || mW >= 10000;
   /** @param {number} mW */
-  const mwText = (mW) => `${formatNumber(mW, mW < 0.01 ? 5 : 3)} mW`;
+  function mwText(mW) {
+    if (!tiny(mW)) return `${formatNumber(mW, 3)} mW`;
+    const { mantissa, exponent } = scientific(mW);
+    return `${formatNumber(mantissa, 2)}·10${exponent < 0 ? '⁻' : ''}${sup(Math.abs(exponent))} mW`;
+  }
+  /** @param {number} mW */
+  function mwTex(mW) {
+    if (!tiny(mW)) return numTex(mW, 3);
+    const { mantissa, exponent } = scientific(mW);
+    return `${numTex(mantissa, 2)} \\cdot 10^{${exponent}}`;
+  }
 
   const note = $derived.by(() => {
-    const out = `Đầu ra: mức $${formatNumber(profile.output, 1)}$ dB so với đầu vào, công suất $P_2 \\approx ${formatNumber(outPower, outPower < 0.01 ? 5 : 3)}$ mW.`;
+    const out = `Đầu ra: mức $${numTex(profile.output, 1)}$ dB so với đầu vào, công suất $P_2 \\approx ${mwTex(outPower)}$ mW.`;
     if (!profile.clear) {
       const sunk = profile.before.some((b) => b < NOISE_LEVEL - 1e-9);
       return {
@@ -143,7 +165,7 @@
         fill="#b91c1c"
         text-anchor="end">Vùng nhiễu</text
       >
-      {#each DB_TICKS as d (d)}
+      {#each dbTicks as d (d)}
         <line x1={LEFT} x2={W - RIGHT} y1={py(d)} y2={py(d)} stroke="#e2e8f0" />
         <text x={LEFT - 4} y={py(d) + 3} font-size="9" fill="#475569" text-anchor="end"
           >{formatNumber(d)}</text
