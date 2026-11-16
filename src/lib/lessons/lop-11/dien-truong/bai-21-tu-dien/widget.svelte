@@ -66,7 +66,7 @@
   const nC = $derived(formatNumber(s.q * 1e9, 2));
   const volts = $derived(formatNumber(s.u, s.u >= 100 ? 0 : 1));
   const nJ = $derived(formatNumber(s.w * 1e9, 1));
-  const hitTarget = $derived(Math.abs(s.q - TARGET) <= 0.05 * TARGET);
+  const hitTarget = $derived(s.onSource && u === 100 && Math.abs(s.q - TARGET) <= 0.05 * TARGET);
 
   const note = $derived.by(() => {
     const values = `$C \\approx ${numTex(s.c * 1e12, 1)}$ pF, $Q = CU \\approx ${numTex(s.q * 1e9, 2)}$ nC, $W = \\dfrac{QU}{2} \\approx ${numTex(s.w * 1e9, 1)}$ nJ.`;
@@ -138,7 +138,7 @@
           text-anchor="middle">−</text
         >
       {/each}
-      <text x={left + plateLen + 4} y={CY + 4} font-size="11" fill="#0f172a">d</text>
+      <text x={left - 6} y={CY + 4} font-size="11" fill="#0f172a" text-anchor="end">d</text>
     </svg>
     <p class="px-2 pt-2 text-sm text-slate-600">
       Mỗi dấu + trên bản trên (và − trên bản dưới) ứng với 1 nC; vẽ tối đa {MAX_SIGNS} dấu. Chiều dài

@@ -233,7 +233,7 @@ export default {
     {
       type: 'choice',
       prompt:
-        'Trên vỏ tụ (A) ghi $2$ µF – $350$ V, trên vỏ tụ (B) ghi $2{,}3$ µF – $300$ V. Tụ nào tích được điện tích lớn nhất lớn hơn?',
+        'Trên vỏ tụ (A) ghi $2$ µF – $350$ V, trên vỏ tụ (B) ghi $2{,}3$ µF – $300$ V. Tụ nào có thể tích được điện tích lớn hơn mà không bị hỏng?',
       options: [
         'Tụ (A), vì $Q_{\\max} = 7 \\cdot 10^{-4}$ C so với $6{,}9 \\cdot 10^{-4}$ C của tụ (B)',
         'Tụ (B), vì tụ (B) có điện dung lớn hơn',

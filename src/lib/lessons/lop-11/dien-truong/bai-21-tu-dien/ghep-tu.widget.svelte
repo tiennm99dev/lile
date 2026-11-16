@@ -23,11 +23,13 @@
   const n = (v) => formatNumber(v, 2);
   /** @param {number} v */
   const t = (v) => numTex(v, 2);
+  /** `=` when two decimals show the value exactly, `\approx` when they round it. @param {number} v */
+  const eq = (v) => (Math.abs(Math.round(v * 100) / 100 - v) < 1e-9 ? '=' : '\\approx');
 
   const note = $derived.by(() => {
     const [a, b] = r.parts;
     if (mode === 'noi-tiep') {
-      return `Nối tiếp: $\\dfrac{1}{C_b} = \\dfrac{1}{${t(c1)}} + \\dfrac{1}{${t(c2)}}$, nên $C_b ${Number.isInteger(r.c) ? '=' : '\\approx'} ${t(r.c)}$ µF, nhỏ hơn mỗi tụ. Hai tụ tích cùng điện tích $Q = C_bU \\approx ${t(r.q)}$ µC; hiệu điện thế chia theo $U_1 = \\dfrac{Q}{C_1} \\approx ${t(a.u)}$ V, $U_2 \\approx ${t(b.u)}$ V (tụ điện dung nhỏ chịu hiệu điện thế lớn hơn), $U_1 + U_2 = ${t(u)}$ V.`;
+      return `Nối tiếp: $\\dfrac{1}{C_b} = \\dfrac{1}{${t(c1)}} + \\dfrac{1}{${t(c2)}}$, nên $C_b ${eq(r.c)} ${t(r.c)}$ µF, nhỏ hơn mỗi tụ. Hai tụ tích cùng điện tích $Q = C_bU ${eq(r.q)} ${t(r.q)}$ µC; hiệu điện thế chia theo $U_1 = \\dfrac{Q}{C_1} ${eq(a.u)} ${t(a.u)}$ V, $U_2 ${eq(b.u)} ${t(b.u)}$ V ${c1 === c2 ? '(hai tụ bằng nhau nên chia đều)' : '(tụ điện dung nhỏ hơn chịu hiệu điện thế lớn hơn)'}, $U_1 + U_2 = ${t(u)}$ V.`;
     }
     return `Song song: $C_b = ${t(c1)} + ${t(c2)} = ${t(r.c)}$ µF, lớn hơn mỗi tụ. Hai tụ cùng hiệu điện thế $U = ${t(u)}$ V; điện tích $Q_1 = ${t(a.q)}$ µC, $Q_2 = ${t(b.q)}$ µC, tổng $Q = ${t(r.q)}$ µC.`;
   });
