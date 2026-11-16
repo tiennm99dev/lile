@@ -73,29 +73,7 @@ export function classify(delta, lambda, slack = 0.08) {
   return { kind: 'between', k: 0, ratio };
 }
 
-/**
- * Number of maxima on the open segment S1S2: integers k with −a/λ < k < a/λ.
- * @param {number} a @param {number} lambda
- */
-export function countMaxima(a, lambda) {
-  const r = tidy(a / lambda, 9);
-  const top = Number.isInteger(r) ? r - 1 : Math.floor(r);
-  return 2 * top + 1;
-}
-
-/**
- * Number of minima on S1S2: integers k with −a/λ − ½ < k < a/λ − ½.
- * @param {number} a @param {number} lambda
- */
-export function countMinima(a, lambda) {
-  let n = 0;
-  const lo = -a / lambda - 0.5;
-  const hi = a / lambda - 0.5;
-  for (let k = Math.ceil(lo - 1); k <= Math.floor(hi + 1); k++) {
-    if (k > lo + 1e-9 && k < hi - 1e-9) n++;
-  }
-  return n;
-}
+export { countMaxima, countMinima } from '../_shared/interference.js';
 
 /**
  * Fringe spacing i = λD/a. With λ in µm, D in m and a in mm the result is
