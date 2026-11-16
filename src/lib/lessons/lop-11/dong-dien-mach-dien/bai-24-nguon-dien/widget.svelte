@@ -7,7 +7,6 @@
   import GraphPanel from '../_shared/graph-panel.svelte';
   import { circuitCurrent, terminalVoltage } from '../_shared/circuit-math.js';
 
-  const I_MAX = 8;
   const U_MAX = 12;
 
   let emf = $state(6);
@@ -19,6 +18,10 @@
   const drop = $derived(emf - u);
   const short = $derived(outer === 0);
 
+  // The I axis grows to the short-circuit current E/r, so the working point
+  // and the end of the line always stay on the graph.
+  const iMax = $derived(emf / r <= 8 ? 8 : 24);
+  const iTicks = $derived(iMax === 8 ? [0, 2, 4, 6, 8] : [0, 6, 12, 18, 24]);
   const line = $derived([
     { x: 0, y: emf },
     { x: emf / r, y: 0 },
@@ -135,10 +138,10 @@
   <div class="{card} p-2">
     <GraphPanel
       xMin={0}
-      xMax={I_MAX}
+      xMax={iMax}
       yMin={0}
       yMax={U_MAX}
-      xTicks={[0, 2, 4, 6, 8]}
+      xTicks={iTicks}
       yTicks={[0, 3, 6, 9, 12]}
       xLabel="I (A)"
       yLabel="U (V)"

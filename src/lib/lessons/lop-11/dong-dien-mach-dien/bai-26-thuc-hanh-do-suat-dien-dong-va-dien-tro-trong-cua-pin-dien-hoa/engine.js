@@ -51,12 +51,13 @@ export function readingAt(cell, rheostat, seed) {
 
 /**
  * Checks the E and r a learner read off their graph against the line fitted
- * through their own points: E within 0,02 V, r within 0,15 Ω or 15 %.
+ * through their own points: E within 0,02 V, r within 0,2 Ω or 15 %. The 0,2 Ω floor
+ * covers a new cell, whose slope two rounded readings only give to about 0,15 Ω.
  * @param {{ emf: number, r: number }} guess
  * @param {{ emf: number, r: number }} fitted
  */
 export function judgeReading(guess, fitted) {
   const emfOk = Math.abs(guess.emf - fitted.emf) <= 0.02;
-  const rOk = Math.abs(guess.r - fitted.r) <= Math.max(0.15, 0.15 * fitted.r);
+  const rOk = Math.abs(guess.r - fitted.r) <= Math.max(0.2, 0.15 * fitted.r);
   return { emfOk, rOk };
 }

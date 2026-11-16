@@ -39,7 +39,10 @@
     last = null;
     typedE = '';
     typedR = '';
-    message = { tone: 'info', text: 'Đã lắp pin mới vào mạch. Đo lại từ đầu.' };
+    message = {
+      tone: 'info',
+      text: 'Đã thay pin khác vào mạch. Bảng số liệu được xoá, hãy đo lại từ đầu.',
+    };
   }
 
   /** @param {string | number} next */
