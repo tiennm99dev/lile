@@ -143,11 +143,11 @@ export default {
       steps: [
         'Nhiệt lượng cung cấp: $\\mathscr{P}(\\tau_Q - \\tau_P) = 15{,}2 \\cdot 500 = 7\\,600$ J.',
         'Khối lượng nước đã hoá hơi: $m_P - m_Q = 118{,}7 - 115{,}3 = 3{,}4$ g $= 0{,}0034$ kg.',
-        '$L = \\dfrac{7\\,600}{0{,}0034} \\approx 2{,}24 \\cdot 10^{6}$ J/kg.',
-        'Sai số tỉ đối: $\\dfrac{|2{,}24 - 2{,}26|}{2{,}26} \\approx 0{,}9\\%$.',
+        '$L = \\dfrac{7\\,600}{0{,}0034} \\approx 2\\,235\\,000$ J/kg $\\approx 2{,}24 \\cdot 10^{6}$ J/kg.',
+        'Sai số tỉ đối, tính với giá trị chưa làm tròn: $\\dfrac{2\\,260\\,000 - 2\\,235\\,000}{2\\,260\\,000} \\approx 1{,}1\\%$.',
       ],
       answer:
-        '$L \\approx 2{,}24 \\cdot 10^{6}$ J/kg, lệch khoảng $0{,}9\\%$ so với giá trị trong bảng.',
+        '$L \\approx 2{,}24 \\cdot 10^{6}$ J/kg, lệch khoảng $1{,}1\\%$ so với giá trị trong bảng.',
     },
   ],
   practice: [

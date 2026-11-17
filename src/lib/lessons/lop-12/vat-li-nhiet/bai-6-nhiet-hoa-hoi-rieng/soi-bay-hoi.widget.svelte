@@ -53,7 +53,7 @@
       },
       {
         id: 'ap-suat',
-        label: 'Nhiệt độ xảy ra càng cao khi áp suất trên mặt chất lỏng càng lớn',
+        label: 'Áp suất trên mặt chất lỏng càng lớn thì nhiệt độ xảy ra càng cao',
         bin: 'soi',
         why: 'Nồi áp suất làm nước sôi ở trên $100$ °C; trên núi cao, nước sôi dưới $100$ °C.',
       },

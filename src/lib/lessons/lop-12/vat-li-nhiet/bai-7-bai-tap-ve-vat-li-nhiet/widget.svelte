@@ -63,6 +63,8 @@
       const head = `Làm nóng nước đá tới $0$ °C rồi làm tan hết cần $${fmt(Math.round(iceBudget.need))}$ J; nước hạ xuống $0$ °C toả ra tối đa $${fmt(Math.round(iceBudget.give))}$ J.`;
       if (r.temperature > 0)
         return `${head} Nhiệt lượng nước toả ra đủ làm tan hết nước đá, phần dư làm nóng cả hỗn hợp: $t \\approx ${t}$ °C.`;
+      if (r.temperature < 0)
+        return `${head} Nước đá lạnh quá: dù toàn bộ $${formatNumber(massB * 1000, 0)}$ g nước trong bình đông đặc, nước đá vẫn chưa nóng tới $0$ °C, nên cả khối nước đá cân bằng ở $t \\approx ${t}$ °C.`;
       if (r.iceMelted >= 0)
         return `${head} Không đủ để làm tan hết: hỗn hợp dừng ở $0$ °C, có $${formatNumber(r.iceMelted * 1000, 1)}$ g nước đá tan, còn $${formatNumber(r.iceLeft * 1000, 1)}$ g nước đá.`;
       return `${head} Nước đá lạnh quá: nước toả nhiệt rồi đông đặc thêm $${formatNumber(-r.iceMelted * 1000, 1)}$ g, hỗn hợp ở $0$ °C.`;

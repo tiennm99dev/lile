@@ -47,6 +47,16 @@ describe('mixing two bodies in a calorimeter', () => {
     expect(r.heat).toBeCloseTo(21000, 6);
   });
 
+  it('freezes all the water and stays below 0 °C when the ice is cold and plentiful', () => {
+    // 1 kg ice at −20 °C into 0,1 kg water at 0 °C: freezing gives 33 400 J, the ice needs 42 000 J.
+    const r = mix(
+      { substance: 'nuoc-da', mass: 1, temperature: -20 },
+      { substance: 'nuoc', mass: 0.1, temperature: 0 },
+    );
+    expect(r.temperature).toBeCloseTo((33400 - 42000) / (1.1 * 2100), 6);
+    expect(r.iceLeft).toBeCloseTo(1.1, 9);
+  });
+
   it('goes below 0 °C when a cold metal meets ice', () => {
     const r = mix(
       { substance: 'nuoc-da', mass: 0.1, temperature: -20 },

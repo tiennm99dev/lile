@@ -72,6 +72,11 @@
   const level = $derived(70 * (now.mass / 0.5));
 
   const note = $derived.by(() => {
+    if (last && last[1].time <= last[0].time)
+      return {
+        tone: /** @type {const} */ ('warn'),
+        text: 'Lần ghi sau phải muộn hơn lần ghi trước. Đun tiếp (hoặc kéo thanh thời gian về sau) rồi bấm “Ghi số liệu” lần nữa.',
+      };
     if (last && latent === null)
       return {
         tone: /** @type {const} */ ('warn'),
