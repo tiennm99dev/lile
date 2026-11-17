@@ -1,12 +1,16 @@
 import { describe, expect, it } from 'vitest';
 import {
   DPHI_OPTIONS,
+  I_RANGES,
+  SCREEN_T,
   TASKS,
+  U_RANGES,
   characteristics,
   checkReading,
   relationPlain,
   relationText,
   rmsText,
+  screenScale,
 } from './engine.js';
 
 describe('characteristic values', () => {
@@ -39,6 +43,26 @@ describe('reading tasks', () => {
       const pick = DPHI_OPTIONS.findIndex((d) => Math.abs(d - c.dphi) < 1e-9);
       const r = checkReading(task, { U: Math.round(c.U * 100) / 100, f: task.f, pick });
       if (pick < 0 || !r.all) bad.push(task);
+    }
+    expect(bad).toEqual([]);
+  });
+
+  it('draws every screen so its peaks and period can be read off the grid', () => {
+    const bad = [];
+    /** @param {number} f @param {number} phi */
+    const peaksOnScreen = (f, phi) => {
+      const T = 1 / f;
+      const first = ((((-phi / (2 * Math.PI)) * T) % T) + T) % T;
+      return Math.floor((SCREEN_T - first) / T + 1e-9) + 1;
+    };
+    for (const task of TASKS) {
+      const u = screenScale(task.U0, U_RANGES);
+      const i = screenScale(task.I0, I_RANGES);
+      const onGrid = (/** @type {number} */ x, /** @type {number} */ step) =>
+        Math.abs(x / step - Math.round(x / step)) < 1e-9;
+      const twoPeaks =
+        peaksOnScreen(task.f, task.phiU) >= 2 || peaksOnScreen(task.f, task.phiI) >= 2;
+      if (!onGrid(task.U0, u.step) || !onGrid(task.I0, i.step) || !twoPeaks) bad.push(task);
     }
     expect(bad).toEqual([]);
   });

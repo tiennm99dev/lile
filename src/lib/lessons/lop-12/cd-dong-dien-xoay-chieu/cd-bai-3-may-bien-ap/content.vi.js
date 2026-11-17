@@ -268,7 +268,7 @@ export default {
         'Tần số của dòng điện',
         'Điện áp hiệu dụng',
         'Cường độ dòng điện hiệu dụng',
-        'Số vòng dây',
+        'Điện áp cực đại',
       ],
       answer: 0,
       hints: [

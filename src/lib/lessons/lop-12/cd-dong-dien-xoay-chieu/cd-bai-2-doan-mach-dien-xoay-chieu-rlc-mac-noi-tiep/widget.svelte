@@ -108,7 +108,8 @@
         <text x={OX + s.UR * k} y={OY + 18} font-size="13" fill="#16a34a" text-anchor="middle"
           >U<tspan font-size="9" dy="3">R</tspan></text
         >
-        <text x={tip.x + 8} y={tip.y + (tip.y < OY ? -4 : 12)} font-size="13" fill="#2563eb">U</text
+        <text x={tip.x + 8} y={tip.y + (tip.y > OY + 14 ? 12 : -6)} font-size="13" fill="#2563eb"
+          >U</text
         >
       </svg>
     </div>

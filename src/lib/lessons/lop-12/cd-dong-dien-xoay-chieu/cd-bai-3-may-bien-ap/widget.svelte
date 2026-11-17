@@ -94,7 +94,7 @@
       viewBox="0 0 360 200"
       class="mx-auto block w-full max-w-md select-none"
       role="img"
-      aria-label={`Máy biến áp: cuộn sơ cấp ${N1} vòng nối nguồn ${ac ? 'xoay chiều' : 'một chiều'} ${U1} V, cuộn thứ cấp ${N2} vòng nối điện trở tải ${R} Ω; điện áp ra ${formatNumber(t.U2, 1)} V.`}
+      aria-label={`Máy biến áp: cuộn sơ cấp ${formatNumber(N1)} vòng nối nguồn ${ac ? 'xoay chiều' : 'một chiều'} ${U1} V, cuộn thứ cấp ${formatNumber(N2)} vòng nối điện trở tải ${R} Ω; điện áp ra ${formatNumber(t.U2, 1)} V.`}
     >
       <path
         d="M {CORE.x} {CORE.y} h {CORE.w} v {CORE.h} h {-CORE.w} Z M {CORE.x + CORE.bar} {CORE.y +
@@ -141,7 +141,9 @@
       <circle cx="40" cy="100" r="16" fill="#fff" stroke="#334155" />
       <text x="40" y="105" font-size="14" text-anchor="middle" fill="#334155">{ac ? '~' : '='}</text
       >
-      <text x="40" y="190" font-size="11" text-anchor="middle" fill="#b45309">N₁ = {N1}</text>
+      <text x="40" y="190" font-size="11" text-anchor="middle" fill="#b45309"
+        >N₁ = {formatNumber(N1)}</text
+      >
       <!-- secondary circuit -->
       <polyline
         points="{CORE.x + CORE.w + 7},{secondary[0].y1} 320,{secondary[0].y1} 320,78"
@@ -156,7 +158,9 @@
         stroke="#334155"
       />
       <rect x="311" y="78" width="18" height="44" fill="#fff" stroke="#334155" />
-      <text x="320" y="190" font-size="11" text-anchor="middle" fill="#0f766e">N₂ = {N2}</text>
+      <text x="320" y="190" font-size="11" text-anchor="middle" fill="#0f766e"
+        >N₂ = {formatNumber(N2)}</text
+      >
       <text x="40" y="20" font-size="11" text-anchor="middle" fill="#334155">U₁ = {U1} V</text>
       <text x="320" y="20" font-size="11" text-anchor="middle" fill="#334155"
         >U₂ ≈ {formatNumber(t.U2, 1)} V</text

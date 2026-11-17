@@ -7,23 +7,23 @@
   import { button, card, textInput } from '#lib/core/ui.js';
   import OscGraph from '#lib/domain/osc-graph.svelte';
   import { piText } from '#lib/domain/oscillation.js';
-  import { acAt, rangeFor } from '../_shared/ac.js';
+  import { acAt } from '../_shared/ac.js';
   import {
     DPHI_OPTIONS,
+    I_RANGES,
     PHASE_STEP,
+    SCREEN_T,
     TASKS,
+    U_RANGES,
     characteristics,
     checkReading,
     relationPlain,
     relationText,
+    screenScale,
   } from './engine.js';
 
-  const T_MAX = 0.04;
+  const T_MAX = SCREEN_T;
   const T_STEP = 0.005;
-  const U_RANGES = [2, 4, 6, 10];
-  const I_RANGES = [1, 2, 4, 6];
-  /** @param {number} r */
-  const stepOf = (r) => (r <= 4 ? 1 : 2);
 
   const F_OPTIONS = [25, 50, 100].map((v) => ({ value: v, label: `${v} Hz` }));
 
@@ -36,8 +36,8 @@
 
   const s = $derived({ U0, I0, f, phiU: kU * PHASE_STEP, phiI: kI * PHASE_STEP });
   const c = $derived(characteristics(s));
-  const uRange = $derived(rangeFor(U0, U_RANGES));
-  const iRange = $derived(rangeFor(I0, I_RANGES));
+  const uScale = $derived(screenScale(U0, U_RANGES));
+  const iScale = $derived(screenScale(I0, I_RANGES));
   const uNow = $derived(acAt(U0, f, s.phiU, t));
   const iNow = $derived(acAt(I0, f, s.phiI, t));
   const uCurve = $derived((/** @type {number} */ x) => acAt(U0, f, s.phiU, x));
@@ -75,8 +75,8 @@
   let result = $state(null);
 
   const task = $derived(TASKS[pick]);
-  const tRangeU = $derived(rangeFor(task.U0, U_RANGES));
-  const tRangeI = $derived(rangeFor(task.I0, I_RANGES));
+  const tScaleU = $derived(screenScale(task.U0, U_RANGES));
+  const tScaleI = $derived(screenScale(task.I0, I_RANGES));
   const PHI_CHOICES = DPHI_OPTIONS.map((d, i) => ({ value: i, label: relationPlain(d) }));
 
   function check() {
@@ -126,14 +126,14 @@
 <div class="space-y-4">
   <div class="{card} space-y-2 p-2">
     <p class="px-2 text-sm font-semibold text-slate-700">
-      Kênh 1: điện áp u (thang đo ±{uRange} V)
+      Kênh 1: điện áp u (thang đo ±{uScale.range} V)
     </p>
     <OscGraph
       curves={[{ f: uCurve, color: '#2563eb' }]}
       tMax={T_MAX}
-      yMax={uRange}
+      yMax={uScale.range}
       tStep={T_STEP}
-      yStep={stepOf(uRange)}
+      yStep={uScale.step}
       yLabel="u (V)"
       label="Đồ thị điện áp u theo thời gian; chọn thời điểm"
       cursor={t}
@@ -143,14 +143,14 @@
       height={150}
     />
     <p class="px-2 text-sm font-semibold text-slate-700">
-      Kênh 2: cường độ dòng điện i (thang đo ±{iRange} A)
+      Kênh 2: cường độ dòng điện i (thang đo ±{iScale.range} A)
     </p>
     <OscGraph
       curves={[{ f: iCurve, color: '#dc2626' }]}
       tMax={T_MAX}
-      yMax={iRange}
+      yMax={iScale.range}
       tStep={T_STEP}
-      yStep={stepOf(iRange)}
+      yStep={iScale.step}
       yLabel="i (A)"
       label="Đồ thị cường độ dòng điện i theo thời gian; chọn thời điểm"
       cursor={t}
@@ -206,9 +206,9 @@
     <OscGraph
       curves={[{ f: (x) => acAt(task.U0, task.f, task.phiU, x), color: '#2563eb' }]}
       tMax={T_MAX}
-      yMax={tRangeU}
+      yMax={tScaleU.range}
       tStep={T_STEP}
-      yStep={stepOf(tRangeU)}
+      yStep={tScaleU.step}
       yLabel="u (V)"
       label={`Màn hình ${pick + 1}, kênh 1: đồ thị điện áp u theo thời gian.`}
       height={160}
@@ -216,9 +216,9 @@
     <OscGraph
       curves={[{ f: (x) => acAt(task.I0, task.f, task.phiI, x), color: '#dc2626' }]}
       tMax={T_MAX}
-      yMax={tRangeI}
+      yMax={tScaleI.range}
       tStep={T_STEP}
-      yStep={stepOf(tRangeI)}
+      yStep={tScaleI.step}
       yLabel="i (A)"
       label={`Màn hình ${pick + 1}, kênh 2: đồ thị cường độ dòng điện i theo thời gian.`}
       height={160}

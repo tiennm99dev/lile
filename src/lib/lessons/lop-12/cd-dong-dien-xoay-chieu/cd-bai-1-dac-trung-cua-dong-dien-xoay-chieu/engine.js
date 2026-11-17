@@ -6,10 +6,27 @@
  */
 import { formatNumber } from '#lib/core/number-format.js';
 import { lagOf, phaseRelation, piTex, piText } from '#lib/domain/oscillation.js';
-import { TAU, rms } from '../_shared/ac.js';
+import { TAU, rangeFor, rms } from '../_shared/ac.js';
 
 /** Phases are set in steps of π/6. */
 export const PHASE_STEP = Math.PI / 6;
+
+/** The time shown on the screen, s. */
+export const SCREEN_T = 0.04;
+
+/** The volts/div and amperes/div ranges of the two channels. */
+export const U_RANGES = [2, 4, 6, 10];
+export const I_RANGES = [1, 2, 4, 6];
+
+/**
+ * The range a channel switches to for a peak and the spacing of its grid
+ * lines, one unit up to a range of 4 and two above.
+ * @param {number} peak @param {number[]} ranges
+ */
+export function screenScale(peak, ranges) {
+  const range = rangeFor(peak, ranges);
+  return { range, step: range <= 4 ? 1 : 2 };
+}
 
 /**
  * @typedef {{ U0: number, I0: number, f: number, phiU: number, phiI: number }} Signals
@@ -68,14 +85,15 @@ export function relationPlain(dphi) {
 export const DPHI_OPTIONS = [0, Math.PI / 3, -Math.PI / 3, Math.PI / 2, -Math.PI / 2, Math.PI];
 
 /**
- * Screens to read: peaks on whole grid lines, periods on whole ticks.
+ * Screens to read: peaks on grid lines, periods on whole ticks, and two
+ * successive peaks of at least one curve on the screen.
  * @type {ReadonlyArray<Signals>}
  */
 export const TASKS = [
   { U0: 4, I0: 2, f: 50, phiU: 0, phiI: -Math.PI / 2 },
-  { U0: 6, I0: 3, f: 25, phiU: Math.PI / 2, phiI: Math.PI / 2 },
+  { U0: 6, I0: 3, f: 25, phiU: 0, phiI: 0 },
   { U0: 3, I0: 1, f: 100, phiU: 0, phiI: Math.PI / 2 },
-  { U0: 5, I0: 2, f: 50, phiU: Math.PI / 3, phiI: 0 },
+  { U0: 6, I0: 2, f: 50, phiU: Math.PI / 3, phiI: 0 },
   { U0: 2, I0: 3, f: 50, phiU: 0, phiI: Math.PI },
   { U0: 8, I0: 4, f: 25, phiU: -Math.PI / 3, phiI: 0 },
 ];
