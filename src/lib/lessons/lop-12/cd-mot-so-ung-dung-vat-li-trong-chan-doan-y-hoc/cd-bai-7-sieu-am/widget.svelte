@@ -72,7 +72,8 @@
       /** @type {-1 | 0 | 1} */ _dy,
       /** @type {boolean} */ big,
     ) => {
-      moveTo(probeX + dx * (big ? 3 : 0.6));
+      // Step whole image columns from a column centre, so no column is skipped.
+      moveTo(colCentre(colOf(probeX) + dx * (big ? 5 : 1)));
     },
   });
 

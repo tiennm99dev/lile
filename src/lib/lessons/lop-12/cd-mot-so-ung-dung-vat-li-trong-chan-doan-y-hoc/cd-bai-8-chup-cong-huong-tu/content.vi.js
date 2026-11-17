@@ -92,7 +92,7 @@ export default {
             ['Nguồn', 'Từ trường và sóng vô tuyến', 'Tia X'],
             ['An toàn', 'Không có bức xạ ion hoá', 'Có liều tia X'],
             ['Ảnh mô mềm', 'Tốt hơn nhiều', 'Kém hơn'],
-            ['Xương, vôi hoá, mạch máu', 'Kém hơn', 'Phù hợp hơn'],
+            ['Xương, vôi hoá', 'Kém hơn', 'Phù hợp hơn'],
             ['Thời gian chụp', 'Khoảng $10$ đến $30$ phút', 'Khoảng $5$ đến $15$ phút'],
             ['Tiếng ồn', 'Lớn, cần bảo vệ tai', 'Nhẹ'],
             ['Chi phí', 'Cao', 'Thấp hơn'],

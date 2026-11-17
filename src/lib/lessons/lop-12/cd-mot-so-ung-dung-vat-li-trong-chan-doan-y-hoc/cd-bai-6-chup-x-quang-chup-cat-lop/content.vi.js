@@ -224,11 +224,11 @@ export default {
       type: 'number',
       prompt:
         'Đầu dò của máy chụp cắt lớp đo được cường độ tia X sau khi đi qua $10$ cm một mô đồng nhất chỉ còn bằng $10\\%$ cường độ ban đầu. Hệ số suy giảm của mô là bao nhiêu $\\text{m}^{-1}$?',
-      answer: 23,
+      answer: 23.03,
       tolerance: 0.05,
       hints: ['Từ $I = I_0e^{-\\mu d}$: $\\mu = \\dfrac{1}{d}\\ln\\dfrac{I_0}{I}$.'],
       solution:
-        '$\\mu = \\dfrac{\\ln 10}{0{,}1} \\approx \\dfrac{2{,}303}{0{,}1} \\approx 23{,}0\\ \\text{m}^{-1}$.',
+        '$\\mu = \\dfrac{\\ln 10}{0{,}1} \\approx \\dfrac{2{,}303}{0{,}1} \\approx 23{,}03\\ \\text{m}^{-1}$.',
     },
     {
       type: 'number',
