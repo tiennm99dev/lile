@@ -3,7 +3,7 @@ export default {
   summary:
     'Luyện tập ba dạng bài của chương Vật lí hạt nhân: tính độ hụt khối, năng lượng liên kết và năng lượng liên kết riêng; hoàn thành phương trình phản ứng hạt nhân bằng định luật bảo toàn số khối và điện tích rồi tính năng lượng phản ứng; vận dụng định luật phóng xạ và chu kì bán rã.',
   intro:
-    'Ba công thức đứng sau gần như mọi bài toán hạt nhân ở lớp 12: $E_{lk} = \\Delta m c^2$, các định luật bảo toàn số khối và điện tích, và $N = N_0 \\cdot 2^{-\\frac{t}{T}}$. Bài này giúp em luyện cả ba cho thật chắc, với các phản ứng có thật: từ phản ứng nhân tạo đầu tiên của Rutherford đến phản ứng nhiệt hạch trong lòng Mặt Trời.',
+    'Ba công thức đứng sau gần như mọi bài toán hạt nhân ở lớp 12: $E_{lk} = \\Delta m c^2$, các định luật bảo toàn số khối và điện tích, và $N = N_0 \\cdot 2^{-\\frac{t}{T}}$. Bài này giúp em luyện cả ba cho thật chắc, với các phản ứng có thật: từ phản ứng nhân tạo đầu tiên của Rutherford đến phân hạch uranium và tổng hợp các hạt nhân hydrogen.',
   objectives: [
     'Tính được độ hụt khối, năng lượng liên kết, năng lượng liên kết riêng và so sánh độ bền vững của các hạt nhân.',
     'Hoàn thành được phương trình phản ứng hạt nhân và tính được năng lượng toả ra hay thu vào.',

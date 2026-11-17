@@ -77,6 +77,22 @@ describe('drill skills', () => {
     expect(bad).toEqual([]);
   });
 
+  it('start a decay series only from heavy nuclei that exist', () => {
+    const rand = rng(7);
+    const bad = [];
+    let seen = 0;
+    for (let i = 0; i < 200; i++) {
+      const q = SKILLS[0].make(rand);
+      const m = /\{\}\^\{(\d+)\}_\{(\d+)\}\\mathrm\{\w+\}\$ phóng ra/.exec(q.prompt);
+      if (!m) continue;
+      seen++;
+      const excess = Number(m[1]) - 2 * Number(m[2]);
+      if (excess < 40 || excess > 54) bad.push(q.prompt);
+    }
+    expect(seen).toBeGreaterThan(20);
+    expect(bad).toEqual([]);
+  });
+
   it('round binding and reaction energies to the places they ask for', () => {
     const rand = rng(11);
     const bad = [];

@@ -304,8 +304,9 @@ export const CONSERVATION_SKILL = {
         ],
       };
     }
-    const A = int(rand, 200, 240);
+    // A heavy nucleus near the valley of stability: N − Z from 40 to 54.
     const Z = int(rand, 82, 94);
+    const A = 2 * Z + int(rand, 40, 54);
     const x = int(rand, 1, 3);
     const y = int(rand, 1, 3);
     const askZ = rand() < 0.5;

@@ -171,9 +171,9 @@ export function describe(Z, N) {
     .map((a) => nameOf(Z, a))
     .join(', ');
   if (s.kind === 'stable')
-    return `${head} Đây là một đồng vị bền. Các đồng vị bền hoặc sống lâu của ${NAMES[Z]}: ${isos}.`;
+    return `${head} Đây là một đồng vị bền. Các đồng vị của ${NAMES[Z]} có trong bộ xếp: ${isos}.`;
   if (s.kind === 'radioactive')
     return `${head} Đây là một đồng vị phóng xạ, chu kì bán rã khoảng ${s.half}${s.note ? `, ${s.note}` : ''}.`;
   const few = A < Math.min(...STABLE[Z]);
-  return `${head} Hạt nhân này không bền: ${few ? 'thiếu' : 'thừa'} neutron so với các đồng vị bền, nếu tạo được thì nó phân rã trong chưa đầy một giờ; số neutron càng lệch thì các nucleon càng khó giữ được với nhau. Các đồng vị bền hoặc sống lâu của ${NAMES[Z]}: ${isos}.`;
+  return `${head} Hạt nhân này không bền: ${few ? 'thiếu' : 'thừa'} neutron so với các đồng vị bền, nếu tạo được thì nó phân rã trong chưa đầy một giờ; số neutron càng lệch thì các nucleon càng khó giữ được với nhau. Các đồng vị của ${NAMES[Z]} có trong bộ xếp: ${isos}.`;
 }

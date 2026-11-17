@@ -29,6 +29,8 @@
   let steady = $state(0);
   let phase = $state(/** @type {'idle' | 'run' | 'trip' | 'out' | 'won'} */ ('idle'));
   let trace = $state([{ t: 0, p: 100 }]);
+  /** The operator dropped every rod by hand. */
+  let scrammed = $state(false);
   /** @type {(() => void) | null} */
   let stop = null;
   let carry = 0;
@@ -85,11 +87,13 @@
     steady = 0;
     carry = 0;
     trace = [{ t: 0, p: 100 }];
+    scrammed = false;
     phase = 'idle';
   }
 
   function scram() {
     depth = 100;
+    scrammed = true;
   }
 
   const points = $derived(trace.map((s) => ({ x: s.t - Math.max(0, clock - WINDOW), y: s.p })));
@@ -125,6 +129,8 @@
       return `Lò đang ở công suất định mức. Bấm "Vận hành lò" rồi kéo thanh trượt để nâng, hạ thanh điều khiển, giữ công suất trong vùng ${BAND.lo}% đến ${BAND.hi}% suốt ${GOAL} giây. Nhiên liệu cháy dần nên k cũng giảm dần theo thời gian.`;
     if (phase === 'trip')
       return `Công suất vượt ${TRIP}%: hệ thống an toàn tự động hạ hết các thanh điều khiển (dập lò). Trong nhà máy thật, các thanh điều khiển luôn được thả rơi để dập lò khi có sự cố. Bấm "Chơi lại".`;
+    if (phase === 'out' && scrammed && depth === 100)
+      return `Em đã dập lò: mọi thanh điều khiển cắm hết vào lõi, k < 1 nên phản ứng dây chuyền tắt hẳn. Bấm "Chơi lại" để vận hành lại.`;
     if (phase === 'out')
       return `Thanh điều khiển hấp thụ quá nhiều neutron, k < 1 quá lâu nên phản ứng dây chuyền tắt. Bấm "Chơi lại" và nâng thanh điều khiển lên sớm hơn.`;
     if (phase === 'won')
