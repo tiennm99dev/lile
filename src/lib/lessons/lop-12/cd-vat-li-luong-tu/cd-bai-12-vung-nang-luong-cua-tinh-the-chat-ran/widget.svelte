@@ -55,7 +55,7 @@
         text: `Ở kim loại, vùng chứa electron hoá trị chỉ được lấp đầy một phần (hoặc chồng lên vùng dẫn), nên luôn có rất nhiều electron tự do, $n \\approx ${sciTex(n)}\\ \\text{cm}^{-3}$, gần như không đổi. Nhiệt độ càng cao, các ion ở nút mạng dao động càng mạnh, electron va chạm với chúng càng nhiều. Ở $${T}$ K, điện trở ${ratioText(R)} điện trở lúc $300$ K.${lit ? ' Chiếu sáng hầu như không làm thay đổi điện trở của kim loại.' : ''}`,
       };
     }
-    const head = `${mat.name}: vùng cấm rộng $E_g = ${numTex(mat.gap, 2)}$ eV. Mật độ electron trong vùng dẫn $n \\approx ${sciTex(n)}\\ \\text{cm}^{-3}$`;
+    const head = `${mat.name}: độ rộng vùng cấm $E_g = ${numTex(mat.gap, 2)}$ eV. Mật độ electron trong vùng dẫn $n \\approx ${sciTex(n)}\\ \\text{cm}^{-3}$`;
     if (mat.kind === 'điện môi' && !lifts) {
       return {
         tone: /** @type {const} */ ('warn'),

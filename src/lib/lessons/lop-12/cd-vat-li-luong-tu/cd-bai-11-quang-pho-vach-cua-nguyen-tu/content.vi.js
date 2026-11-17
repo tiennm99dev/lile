@@ -180,7 +180,7 @@ export default {
         'Trong quang phổ hấp thụ của ánh sáng Mặt Trời có một vạch tối ở bước sóng khoảng $590$ nm. Tính năng lượng của photon bị hấp thụ ứng với vạch này.',
       steps: [
         '$\\varepsilon = \\dfrac{hc}{\\lambda} = \\dfrac{6{,}625 \\cdot 10^{-34} \\cdot 3 \\cdot 10^8}{590 \\cdot 10^{-9}} \\approx 3{,}37 \\cdot 10^{-19}$ J.',
-        'Đổi ra eV: $\\dfrac{3{,}37 \\cdot 10^{-19}}{1{,}6 \\cdot 10^{-19}} \\approx 2{,}11$ eV. Năng lượng này bằng hiệu hai mức năng lượng của một nguyên tố trong khí quyển Mặt Trời (vạch vàng của natri, hoặc một vạch của helium).',
+        'Đổi ra eV: $\\dfrac{3{,}37 \\cdot 10^{-19}}{1{,}6 \\cdot 10^{-19}} \\approx 2{,}11$ eV. Năng lượng này bằng hiệu hai mức năng lượng của nguyên tử natri trong khí quyển Mặt Trời: đó là vạch vàng của natri.',
       ],
       answer: '$\\varepsilon \\approx 3{,}37 \\cdot 10^{-19}$ J $\\approx 2{,}11$ eV.',
     },
@@ -316,7 +316,7 @@ export default {
         'Vạch đỏ có bước sóng dài nhất trong bốn vạch nhìn thấy, tức năng lượng photon nhỏ nhất trong các chuyển về mức L.',
       ],
       solution:
-        'Bốn vạch nhìn thấy ứng với các chuyển về mức L. Vạch đỏ ($\\lambda \\approx 656$ nm) có năng lượng nhỏ nhất, ứng với M → L ($1{,}89$ eV). L → K cho tia tử ngoại, N → M cho tia hồng ngoại.',
+        'Bốn vạch nhìn thấy ứng với các chuyển về mức L. Vạch đỏ ($\\lambda \\approx 658$ nm theo bảng) có năng lượng nhỏ nhất, ứng với M → L ($1{,}89$ eV). L → K cho tia tử ngoại, N → M cho tia hồng ngoại.',
     },
   ],
   takeaways: [

@@ -216,7 +216,7 @@
       <text x={W - 10} y={HGT - 1} font-size="11" fill="#334155" text-anchor="end">U_AK (V)</text>
       <text x={gx.map(0) + 4} y="12" font-size="11" fill="#334155">I (μA)</text>
       <polyline points={pointsAttr(curve)} fill="none" stroke="#4f46e5" stroke-width="2.5" />
-      {#if photo.emits && photo.Uh > 0}
+      {#if photo.emits && photo.Uh > 0 && photo.Uh <= -UMIN}
         <text
           x={gx.map(-photo.Uh)}
           y={gy.map(0) - 6}

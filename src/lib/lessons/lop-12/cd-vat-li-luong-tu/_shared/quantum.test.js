@@ -35,6 +35,7 @@ describe('spectrum regions and colours', () => {
     expect(colourName(656)).toBe('đỏ');
     expect(colourName(486)).toBe('lam');
     expect(colourName(410)).toBe('tím');
+    expect(colourName(434)).toBe('chàm');
     expect(colourName(300)).toBeNull();
   });
 

@@ -93,10 +93,14 @@ export function spectrumColor(nm) {
   return `#${hex}`;
 }
 
-/** The book's names of the seven colours, by the wavelength they start at (nm). */
+/**
+ * The book's names of the seven colours, by the wavelength they start at (nm).
+ * Chàm starts at 430 nm so that hydrogen's 434 nm line is chàm, as the book
+ * names it.
+ */
 const COLOUR_NAMES = /** @type {const} */ ([
   [380, 'tím'],
-  [440, 'chàm'],
+  [430, 'chàm'],
   [460, 'lam'],
   [500, 'lục'],
   [570, 'vàng'],

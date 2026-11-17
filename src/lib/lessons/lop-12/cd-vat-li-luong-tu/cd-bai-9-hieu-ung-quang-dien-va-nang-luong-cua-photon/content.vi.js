@@ -72,7 +72,7 @@ export default {
           type: 'callout',
           tone: 'theorem',
           title: 'Công thức Einstein về hiện tượng quang điện',
-          text: '$$hf = \\dfrac{hc}{\\lambda} = A + W_{đmax}, \\qquad W_{đmax} = \\dfrac{1}{2}mv_{0max}^2$$ trong đó $A$ là công thoát của kim loại, $W_{đmax}$ là động năng ban đầu cực đại của quang electron, $m = 9{,}1 \\cdot 10^{-31}$ kg là khối lượng electron.',
+          text: '$$hf = \\dfrac{hc}{\\lambda} = A + W_{đmax}$$ trong đó $A$ là công thoát của kim loại, $W_{đmax} = \\dfrac{1}{2}mv_{0max}^2$ là động năng ban đầu cực đại của quang electron, $m = 9{,}1 \\cdot 10^{-31}$ kg là khối lượng electron.',
         },
         {
           type: 'list',
