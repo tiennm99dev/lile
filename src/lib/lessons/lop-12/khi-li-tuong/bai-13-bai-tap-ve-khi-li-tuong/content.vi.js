@@ -111,7 +111,7 @@ export default {
         'Quá trình 1 → 2 đẳng nhiệt: $p_1V_1 = p_2V_2$, nên $p_2 = \\dfrac{150 \\cdot 8}{6} = 200$ kPa.',
         'Quá trình 2 → 3 đẳng áp ($p_3 = p_2 = 200$ kPa): $\\dfrac{V_2}{T_2} = \\dfrac{V_3}{T_3}$, với $T_2 = T_1 = 300$ K, nên $V_3 = \\dfrac{6 \\cdot 450}{300} = 9$ lít.',
         'Kiểm tra: $\\dfrac{p_1V_1}{T_1} = \\dfrac{150 \\cdot 8}{300} = 4$ và $\\dfrac{p_3V_3}{T_3} = \\dfrac{200 \\cdot 9}{450} = 4$.',
-        'Trong hệ $(p, V)$: đoạn 1 → 2 là một cung hypebol đi lên từ $(8; 150)$ đến $(6; 200)$; đoạn 2 → 3 là đoạn thẳng nằm ngang ở $p = 200$ kPa, từ $V = 6$ lít đến $V = 9$ lít.',
+        'Trong hệ $(p, V)$: trục hoành là $V$, trục tung là $p$. Đoạn 1 → 2 là một cung hypebol đi lên, từ điểm $V = 8$ lít, $p = 150$ kPa đến điểm $V = 6$ lít, $p = 200$ kPa; đoạn 2 → 3 là đoạn thẳng nằm ngang ở $p = 200$ kPa, từ $V = 6$ lít đến $V = 9$ lít.',
       ],
       answer: '$p_2 = 200$ kPa, $V_3 = 9$ lít.',
     },
@@ -146,7 +146,7 @@ export default {
       prompt:
         'Một lượng khí có thể tích $10$ lít ở $27$ °C được đun nóng đẳng áp đến $127$ °C. Tính thể tích khí lúc sau (theo lít, làm tròn đến hàng phần trăm).',
       answer: 13.33,
-      unit: 'l',
+      unit: 'lít',
       tolerance: 0.01,
       hints: [
         'Đổi ra kelvin: $T_1 = 300$ K, $T_2 = 400$ K.',
@@ -265,12 +265,12 @@ export default {
     {
       type: 'number',
       prompt:
-        'Tính động năng tịnh tiến trung bình của một phân tử khí ở $77$ °C, theo đơn vị $10^{-21}$ J (làm tròn đến hàng phần trăm). Cho $k = 1{,}38 \\cdot 10^{-23}$ J/K.',
-      answer: 7.25,
+        'Tính động năng tịnh tiến trung bình của một phân tử khí ở $87$ °C, theo đơn vị $10^{-21}$ J (làm tròn đến hàng phần trăm). Cho $k = 1{,}38 \\cdot 10^{-23}$ J/K.',
+      answer: 7.45,
       tolerance: 0.01,
-      hints: ['$T = 77 + 273 = 350$ K.', '$\\overline{E}_\\text{đ} = \\dfrac{3}{2}kT$.'],
+      hints: ['$T = 87 + 273 = 360$ K.', '$\\overline{E}_\\text{đ} = \\dfrac{3}{2}kT$.'],
       solution:
-        '$\\overline{E}_\\text{đ} = \\dfrac{3}{2} \\cdot 1{,}38 \\cdot 10^{-23} \\cdot 350 = 7{,}245 \\cdot 10^{-21}$ J $\\approx 7{,}25 \\cdot 10^{-21}$ J.',
+        '$\\overline{E}_\\text{đ} = \\dfrac{3}{2} \\cdot 1{,}38 \\cdot 10^{-23} \\cdot 360 = 7{,}452 \\cdot 10^{-21}$ J $\\approx 7{,}45 \\cdot 10^{-21}$ J.',
     },
     {
       type: 'number',

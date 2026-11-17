@@ -37,7 +37,7 @@ export const RANGE = {
 export const STEP = { p: 10, V: 0.5, T: 10 };
 
 /** Units of each quantity, as the widget writes them. */
-export const UNIT = { p: 'kPa', V: 'l', T: 'K' };
+export const UNIT = { p: 'kPa', V: 'lít', T: 'K' };
 
 /** @type {Puzzle[]} */
 export const PUZZLES = [
@@ -48,7 +48,7 @@ export const PUZZLES = [
         fixed: 'T',
         target: { q: 'V', value: 4 },
         ask: 'p',
-        text: 'Nén đẳng nhiệt đến $V_2 = 4$ l.',
+        text: 'Nén đẳng nhiệt đến $V_2 = 4$ lít.',
       },
       {
         fixed: 'p',
@@ -71,7 +71,7 @@ export const PUZZLES = [
         fixed: 'T',
         target: { q: 'V', value: 9 },
         ask: 'p',
-        text: 'Cho dãn đẳng nhiệt đến $V_3 = 9$ l.',
+        text: 'Cho dãn đẳng nhiệt đến $V_3 = 9$ lít.',
       },
     ],
   },

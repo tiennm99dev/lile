@@ -53,6 +53,7 @@
   let phase = $state(/** @type {'drag' | 'ask' | 'done'} */ ('drag'));
   let typed = $state('');
   let wrong = $state(false);
+  let invalid = $state(false);
   let shown = $state(false);
   /** @type {SVGSVGElement | null} */
   let svg = $state(null);
@@ -88,6 +89,7 @@
     phase = 'drag';
     typed = '';
     wrong = false;
+    invalid = false;
     shown = false;
   }
 
@@ -103,6 +105,7 @@
     states = [...states, now];
     typed = '';
     wrong = false;
+    invalid = false;
     shown = false;
     phase = states.length > puzzle.legs.length ? 'done' : 'drag';
   }
@@ -110,6 +113,7 @@
   function check() {
     if (!leg) return;
     const v = readNumber(typed);
+    invalid = v === null;
     if (v === null) return;
     if (isClose(v, now[leg.ask])) advance();
     else wrong = true;
@@ -150,7 +154,7 @@
       const c = numTex((last.p * last.V) / last.T, 2);
       return {
         tone: /** @type {const} */ ('ok'),
-        text: `Xong bài ${index + 1}! Ở cả ba trạng thái, $pV/T = ${c}$ kPa.l/K. Đổi hệ toạ độ để xem cùng chuỗi biến đổi trên đồ thị khác.`,
+        text: `Xong bài ${index + 1}! Ở cả ba trạng thái, $pV/T = ${c}$ kPa.lít/K. Đổi hệ toạ độ để xem cùng chuỗi biến đổi trên đồ thị khác.`,
       };
     }
     if (!leg) return { tone: /** @type {const} */ ('info'), text: '' };
@@ -161,6 +165,12 @@
       };
     }
     if (shown) return { tone: /** @type {const} */ ('info'), text: solution };
+    if (invalid) {
+      return {
+        tone: /** @type {const} */ ('warn'),
+        text: `Hãy nhập một số, không kèm đơn vị, ví dụ $12{,}5$.`,
+      };
+    }
     if (wrong) {
       return {
         tone: /** @type {const} */ ('warn'),
@@ -221,7 +231,7 @@
   <div class="{card} space-y-1 p-3 text-sm">
     <p class="font-semibold text-slate-800">
       <LiveRichText
-        text={`Trạng thái 1: $p_1 = ${puzzle.start.p}$ kPa, $V_1 = ${puzzle.start.V}$ l, $T_1 = ${puzzle.start.T}$ K.`}
+        text={`Trạng thái 1: $p_1 = ${puzzle.start.p}$ kPa, $V_1 = ${puzzle.start.V}$ lít, $T_1 = ${puzzle.start.T}$ K.`}
       />
     </p>
     <ol class="list-decimal space-y-0.5 pl-5 text-slate-700">
@@ -362,7 +372,7 @@
         <tr class="text-slate-500">
           <th scope="col" class="font-medium">Trạng thái</th>
           <th scope="col" class="font-medium">p (kPa)</th>
-          <th scope="col" class="font-medium">V (l)</th>
+          <th scope="col" class="font-medium">V (lít)</th>
           <th scope="col" class="font-medium">T (K)</th>
         </tr>
       </thead>
@@ -397,7 +407,10 @@
           inputmode="decimal"
           autocomplete="off"
           bind:value={typed}
-          oninput={() => (wrong = false)}
+          oninput={() => {
+            wrong = false;
+            invalid = false;
+          }}
         />
       </div>
       <button type="submit" class={button.primary}>Kiểm tra</button>
