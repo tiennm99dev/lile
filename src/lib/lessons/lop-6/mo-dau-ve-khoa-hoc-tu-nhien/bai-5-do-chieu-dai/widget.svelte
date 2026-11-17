@@ -144,7 +144,7 @@
       bind:this={svg}
       viewBox="0 0 {W} {H}"
       class="w-full touch-none select-none"
-      role="img"
+      role="group"
       aria-label="{thing.name} đặt trên {ruler.name}"
     >
       <rect

@@ -180,7 +180,7 @@
         bind:this={svgEl}
         viewBox="0 0 {VW} {VH}"
         class="mx-auto block w-full max-w-md touch-none select-none"
-        role="img"
+        role="group"
         aria-label="Đòn bẩy có {HOLES} lỗ cách nhau {SPACING_CM} xăng-ti-mét. Điểm tựa ở lỗ {o}, vật ở lỗ {load}, lực tác dụng ở lỗ {effortAt}. {isBalanced
           ? 'Đòn bẩy nằm cân bằng.'
           : 'Đòn bẩy đang nghiêng.'}"

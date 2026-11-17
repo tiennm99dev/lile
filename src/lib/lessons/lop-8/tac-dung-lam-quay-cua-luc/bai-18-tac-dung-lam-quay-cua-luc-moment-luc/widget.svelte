@@ -197,7 +197,7 @@
         bind:this={svgEl}
         viewBox="0 0 {VW} {VH}"
         class="mx-auto block w-full max-w-md touch-none select-none"
-        role="img"
+        role="group"
         aria-label="Cánh cửa nhìn từ trên xuống, bản lề O ở bên trái. Lực đặt cách bản lề {r} xăng-ti-mét, cửa đang mở {Math.round(
           beta,
         )} độ."

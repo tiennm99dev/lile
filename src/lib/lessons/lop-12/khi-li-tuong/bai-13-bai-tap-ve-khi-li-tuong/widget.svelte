@@ -248,7 +248,7 @@
       bind:this={svg}
       viewBox="0 0 {W} {H}"
       class="mx-auto block w-full max-w-lg touch-none select-none"
-      role="img"
+      role="group"
       aria-label={graphLabel}
     >
       <defs>
