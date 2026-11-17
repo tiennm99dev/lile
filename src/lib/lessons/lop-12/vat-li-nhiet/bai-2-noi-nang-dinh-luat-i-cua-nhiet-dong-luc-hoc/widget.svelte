@@ -143,7 +143,7 @@
           stroke-width="3"
           fill="none"
         />
-        <text x={piston + 26} y="60" font-size="11" fill="#7c3aed" font-weight="600"
+        <text x={Math.min(piston + 26, 300)} y="60" font-size="11" fill="#7c3aed" font-weight="600"
           >khí đẩy ra</text
         >
       {/if}

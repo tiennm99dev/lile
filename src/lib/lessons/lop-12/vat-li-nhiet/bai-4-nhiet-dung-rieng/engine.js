@@ -21,13 +21,17 @@ export const SAMPLES = [
   { id: 'nhom', name: 'Nhôm', c: SPECIFIC_HEAT.nhom, color: '#64748b' },
 ];
 
-/** Substances an unknown sample may be. @type {Substance[]} */
+/**
+ * Substances an unknown sample may be: all solid from 25 °C to 100 °C, so the
+ * sample keeps one state while it warms (ice would already have melted).
+ * @type {Substance[]}
+ */
 export const SUSPECTS = [
   { id: 'thuy-tinh', name: 'Thuỷ tinh', c: SPECIFIC_HEAT['thuy-tinh'], color: '#0d9488' },
   { id: 'dat', name: 'Đất', c: SPECIFIC_HEAT.dat, color: '#92400e' },
   { id: 'sat', name: 'Sắt', c: SPECIFIC_HEAT.sat, color: '#475569' },
   { id: 'dong', name: 'Đồng', c: SPECIFIC_HEAT.dong, color: '#c2410c' },
-  { id: 'nuoc-da', name: 'Nước đá', c: SPECIFIC_HEAT['nuoc-da'], color: '#0284c7' },
+  { id: 'chi', name: 'Chì', c: SPECIFIC_HEAT.chi, color: '#334155' },
 ];
 
 /**

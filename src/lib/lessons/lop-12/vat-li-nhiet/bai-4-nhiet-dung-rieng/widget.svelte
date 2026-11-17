@@ -145,7 +145,7 @@
       bind:value={time}
       min={0}
       max={END}
-      step={5}
+      step={1}
       unit="s"
       format={(v) => formatNumber(Math.round(v))}
     />
@@ -190,7 +190,13 @@
             <td class="p-1">{formatNumber(r.t, 1)}</td>
             <td class="p-1">{formatNumber(Math.round(r.t * 10) / 10 - START_T, 1)}</td>
             <td class="p-1">{r.t >= MAX_T ? 'bếp đã tắt' : fmt(q)}</td>
-            <td class="p-1">{r.c === null ? '—' : `≈ ${fmt(Math.round(r.c / 10) * 10)} J/kg.K`}</td>
+            <td class="p-1">
+              {#if mode === 'bi-an' && guess !== unknown.id}
+                tự tính
+              {:else}
+                {r.c === null ? '—' : `≈ ${fmt(Math.round(r.c / 10) * 10)} J/kg.K`}
+              {/if}
+            </td>
           </tr>
         {/each}
       </tbody>
