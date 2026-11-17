@@ -119,7 +119,7 @@ export default {
     },
     {
       problem:
-        'Dây dẫn nằm ngang trong mặt phẳng hình vẽ, dòng điện chạy từ trái sang phải; từ trường đều có $\\vec{B}$ hướng vào mặt phẳng hình vẽ ($\\otimes$). Lực từ tác dụng lên dây có chiều nào?',
+        'Dây dẫn nằm ngang trong mặt phẳng hình vẽ, dòng điện chạy từ trái sang phải; từ trường đều có $\\vec{B}$ hướng vào mặt phẳng hình vẽ (⊗). Lực từ tác dụng lên dây có chiều nào?',
       steps: [
         'Đường sức từ hướng vào mặt phẳng hình vẽ phải đi vào lòng bàn tay trái: lòng bàn tay quay về phía người đọc.',
         'Chiều từ cổ tay đến các ngón tay hướng sang phải theo dòng điện.',
@@ -173,7 +173,7 @@ export default {
     {
       type: 'choice',
       prompt:
-        'Dây dẫn trong mặt phẳng hình vẽ có dòng điện chạy từ trái sang phải, đặt trong từ trường đều có $\\vec{B}$ hướng ra khỏi mặt phẳng hình vẽ ($\\odot$). Lực từ tác dụng lên dây hướng',
+        'Dây dẫn trong mặt phẳng hình vẽ có dòng điện chạy từ trái sang phải, đặt trong từ trường đều có $\\vec{B}$ hướng ra khỏi mặt phẳng hình vẽ (⊙). Lực từ tác dụng lên dây hướng',
       options: ['xuống dưới', 'lên trên', 'vào mặt phẳng hình vẽ', 'ra khỏi mặt phẳng hình vẽ'],
       answer: 0,
       hints: [
@@ -232,6 +232,7 @@ export default {
       prompt:
         'Đoạn dây dài $20$ cm mang dòng điện $2$ A đặt trong từ trường đều $B = 0{,}5$ T thì chịu lực từ $0{,}1$ N. Biết góc giữa dây và đường sức từ là góc nhọn. Góc đó bằng bao nhiêu độ?',
       answer: 30,
+      unit: '°',
       hints: [
         'Tính $BIL$ trước, rồi $\\sin\\alpha = \\dfrac{F}{BIL}$.',
         'Góc nhọn nào có sin bằng $0{,}5$?',

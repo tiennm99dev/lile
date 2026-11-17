@@ -16,7 +16,7 @@ export default {
       blocks: [
         {
           type: 'p',
-          text: 'Hai nam châm đặt gần nhau thì hút hoặc đẩy nhau. Thí nghiệm Oersted cho thấy dòng điện cũng tác dụng lực lên kim nam châm, nam châm tác dụng lực lên dây dẫn có dòng điện, và hai dây dẫn có dòng điện cũng hút hoặc đẩy nhau. Tương tác giữa nam châm với nam châm, giữa dòng điện với nam châm và giữa dòng điện với dòng điện đều gọi là tương tác từ; lực tương tác đó gọi là lực từ.',
+          text: 'Hai nam châm đặt gần nhau thì hút hoặc đẩy nhau. Thí nghiệm Oersted cho thấy dòng điện cũng tác dụng lực lên kim nam châm, nam châm tác dụng lực lên dây dẫn có dòng điện, và hai dây dẫn có dòng điện cũng hút hoặc đẩy nhau. Tương tác giữa nam châm với nam châm, giữa dòng điện với nam châm và giữa dòng điện với dòng điện đều gọi là tương tác từ; lực tương tác đó gọi là lực từ. Từ trường cũng tác dụng lực từ lên các hạt mang điện đang chuyển động (chúng tạo thành dòng điện), còn điện tích đứng yên thì không chịu lực từ.',
         },
         {
           type: 'callout',
@@ -75,7 +75,7 @@ export default {
         },
         {
           type: 'p',
-          text: 'Trên hình vẽ, dây dẫn vuông góc với mặt phẳng hình vẽ được kí hiệu $\\odot$ khi dòng điện hướng ra phía người đọc và $\\otimes$ khi dòng điện hướng vào trong. Với dòng điện $\\odot$, đường sức từ là các đường tròn ngược chiều kim đồng hồ; với dòng điện $\\otimes$, cùng chiều kim đồng hồ.',
+          text: 'Trên hình vẽ, dây dẫn vuông góc với mặt phẳng hình vẽ được kí hiệu ⊙ khi dòng điện hướng ra phía người đọc và ⊗ khi dòng điện hướng vào trong. Với dòng điện ⊙, đường sức từ là các đường tròn ngược chiều kim đồng hồ; với dòng điện ⊗, cùng chiều kim đồng hồ.',
         },
         {
           type: 'p',
@@ -105,7 +105,7 @@ export default {
   examples: [
     {
       problem:
-        'Một dây dẫn thẳng dài vuông góc với mặt phẳng trang giấy, dòng điện chạy từ ngoài vào trong trang giấy ($\\otimes$). Điểm $M$ nằm ngay bên phải dây. Kim nam châm thử đặt tại $M$ có cực Bắc chỉ hướng nào?',
+        'Một dây dẫn thẳng dài vuông góc với mặt phẳng trang giấy, dòng điện chạy từ ngoài vào trong trang giấy (⊗). Điểm $M$ nằm ngay bên phải dây. Kim nam châm thử đặt tại $M$ có cực Bắc chỉ hướng nào?',
       steps: [
         'Giơ ngón cái tay phải hướng vào trong trang giấy (theo chiều dòng điện).',
         'Bốn ngón tay khum lại theo chiều kim đồng hồ khi nhìn từ phía người đọc: đường sức từ là những đường tròn cùng chiều kim đồng hồ quanh dây.',
@@ -174,7 +174,7 @@ export default {
     {
       type: 'choice',
       prompt:
-        'Dây dẫn thẳng dài vuông góc với mặt phẳng hình vẽ, dòng điện hướng ra phía người đọc ($\\odot$). Điểm $N$ nằm ngay phía trên dây. Cảm ứng từ $\\vec{B}$ tại $N$ hướng',
+        'Dây dẫn thẳng dài vuông góc với mặt phẳng hình vẽ, dòng điện hướng ra phía người đọc (⊙). Điểm $N$ nằm ngay phía trên dây. Cảm ứng từ $\\vec{B}$ tại $N$ hướng',
       options: ['sang trái', 'sang phải', 'lên trên', 'xuống dưới'],
       answer: 0,
       hints: [
@@ -182,7 +182,7 @@ export default {
         'Đường sức là đường tròn ngược chiều kim đồng hồ; xét tiếp tuyến tại điểm cao nhất của đường tròn.',
       ],
       solution:
-        'Dòng điện $\\odot$ tạo đường sức là những đường tròn ngược chiều kim đồng hồ. Tại điểm cao nhất của đường tròn, đi ngược chiều kim đồng hồ là đi sang trái, nên $\\vec{B}$ tại $N$ hướng sang trái.',
+        'Dòng điện ⊙ tạo đường sức là những đường tròn ngược chiều kim đồng hồ. Tại điểm cao nhất của đường tròn, đi ngược chiều kim đồng hồ là đi sang trái, nên $\\vec{B}$ tại $N$ hướng sang trái.',
     },
     {
       type: 'choice',

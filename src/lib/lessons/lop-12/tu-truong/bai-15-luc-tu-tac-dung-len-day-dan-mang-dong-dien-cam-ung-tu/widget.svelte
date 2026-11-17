@@ -22,7 +22,8 @@
   /** @type {SVGSVGElement | undefined} */
   let svgEl = $state();
 
-  const half = $derived(40 + lengthCm * 2.4);
+  /** Half the drawn wire: it stays inside the board (CY − 118 > 10) at the longest L. */
+  const half = $derived(30 + lengthCm * 2.2);
   const unit = $derived(currentUnit(theta));
   const tip = $derived({ x: CX + unit.x * half, y: CY - unit.y * half });
   const handle = $state({ x: CX, y: CY - 88 });

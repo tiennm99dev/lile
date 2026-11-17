@@ -163,6 +163,7 @@ export default {
       prompt:
         'Một khung dây phẳng diện tích $50$ cm² đặt trong từ trường đều $B = 0{,}4$ T, $\\vec{B}$ vuông góc với mặt phẳng khung. Từ thông qua khung bằng bao nhiêu mWb?',
       answer: 2,
+      unit: 'mWb',
       hints: [
         'Đổi $50$ cm² $= 5 \\cdot 10^{-3}$ m².',
         '$\\vec{B}$ vuông góc với mặt phẳng khung thì $\\alpha = 0^\\circ$.',
@@ -175,6 +176,7 @@ export default {
         'Một vòng dây diện tích $100$ cm² đặt trong từ trường đều $B = 0{,}2$ T sao cho mặt phẳng vòng dây hợp với đường sức từ góc $30^\\circ$. Từ thông qua vòng dây bằng bao nhiêu mWb?',
       answer: 1,
       tolerance: 0.001,
+      unit: 'mWb',
       hints: [
         'Góc $30^\\circ$ là góc giữa mặt phẳng vòng dây và $\\vec{B}$, không phải góc $\\alpha$ trong công thức.',
         '$\\alpha = 90^\\circ - 30^\\circ = 60^\\circ$.',
