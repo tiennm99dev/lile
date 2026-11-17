@@ -24,6 +24,8 @@
   /** Indices of the tasks done right at the first check. */
   let solved = $state(/** @type {number[]} */ ([]));
   let tried = $state(false);
+  /** Wrong checks of the current task; the first one gets a hint, the second the solution. */
+  let misses = $state(0);
 
   /** @type {SVGSVGElement | undefined} */
   let svgEl = $state();
@@ -134,22 +136,35 @@
     return `Từ thông qua vòng dây ${grows ? 'tăng' : 'giảm'}. Theo định luật Lenz, từ trường cảm ứng ${grows ? 'ngược chiều' : 'cùng chiều'} với $\\vec{B}$, tức là ${out ? 'hướng ra' : 'hướng vào'} mặt phẳng hình vẽ; theo quy tắc nắm tay phải, dòng điện cảm ứng chạy ${answer === 'cw' ? 'cùng' : 'ngược'} chiều kim đồng hồ.`;
   });
 
+  /** A nudge for a first wrong answer: the method without the answer. */
+  const hint = $derived.by(() => {
+    if (task.kind === 'force')
+      return 'Dùng quy tắc bàn tay trái: các đường sức từ hướng vào lòng bàn tay, chiều từ cổ tay đến các ngón tay là chiều dòng điện; ngón cái choãi ra 90° chỉ chiều lực từ. Lực từ luôn vuông góc với cả dây và $\\vec{B}$.';
+    if (task.kind === 'rod')
+      return 'Từ thông qua mạch tăng hay giảm khi thanh trượt? Theo định luật Lenz, từ trường cảm ứng chống lại sự biến thiên đó; rồi dùng quy tắc nắm tay phải để tìm chiều dòng điện trong mạch.';
+    return 'Từ thông qua vòng dây tăng hay giảm? Theo định luật Lenz, từ trường cảm ứng ngược chiều $\\vec{B}$ khi từ thông tăng, cùng chiều khi từ thông giảm; rồi dùng quy tắc nắm tay phải.';
+  });
+
   const note = $derived.by(() => {
     if (!checked) {
       if (guess === null) return prompt;
       const g =
         task.kind === 'loop'
-          ? `chiều ${turnGuess === 'cw' ? 'cùng' : 'ngược'} chiều kim đồng hồ`
+          ? `${turnGuess === 'cw' ? 'cùng' : 'ngược'} chiều kim đồng hồ`
           : dirWords(/** @type {import('./engine.js').Dir} */ (dirGuess));
       return `Em đang chọn: ${g}. Bấm "Kiểm tra" khi đã chắc.`;
     }
-    return right ? `Đúng. ${why}` : `Chưa đúng. ${why}`;
+    if (right) return `Đúng. ${why}`;
+    return misses < 2
+      ? `Chưa đúng. Gợi ý: ${hint} Đổi câu trả lời rồi kiểm tra lại.`
+      : `Chưa đúng. ${why}`;
   });
 
   function check() {
     if (guess === null) return;
     checked = true;
     if (!tried && right && !solved.includes(at)) solved = [...solved, at];
+    if (!right) misses += 1;
     tried = true;
   }
 
@@ -159,10 +174,11 @@
     turnGuess = null;
     checked = false;
     tried = false;
+    misses = 0;
   }
 
   /** A loop being pulled out of a field that fills only the left part. */
-  const pulled = $derived(task.kind === 'loop' && task.story.startsWith('Khung'));
+  const pulled = $derived(task.kind === 'loop' && task.story.startsWith('Vòng dây'));
   /** Field symbol positions on a grid. */
   const grid = $derived.by(() => {
     /** @type {Array<{ x: number, y: number }>} */

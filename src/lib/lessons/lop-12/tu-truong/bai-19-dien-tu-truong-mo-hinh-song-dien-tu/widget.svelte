@@ -90,11 +90,12 @@
     const e = numTex(tidy(here.e, 2) + 0);
     const head = `Tại điểm cách đầu đoạn sóng $${numTex(tidy(probe, 1))}$ m: $E = ${e}\\,E_0$ và $B = ${e}\\,B_0$.`;
     const mag = Math.abs(here.e);
+    const shown = Math.abs(tidy(here.e, 2));
     const phase =
       mag < 0.05
-        ? 'Lúc này $\\vec{E}$ và $\\vec{B}$ cùng bằng 0.'
+        ? `Lúc này $\\vec{E}$ và $\\vec{B}$ cùng ${shown === 0 ? 'bằng' : 'gần bằng'} 0.`
         : mag > 0.97
-          ? 'Lúc này $\\vec{E}$ và $\\vec{B}$ cùng đạt độ lớn cực đại.'
+          ? `Lúc này $\\vec{E}$ và $\\vec{B}$ cùng ${shown === 1 ? 'đạt' : 'gần đạt'} độ lớn cực đại.`
           : '$\\vec{E}$ và $\\vec{B}$ cùng tăng, cùng giảm: chúng dao động cùng pha.';
     const dir =
       mag < 0.05

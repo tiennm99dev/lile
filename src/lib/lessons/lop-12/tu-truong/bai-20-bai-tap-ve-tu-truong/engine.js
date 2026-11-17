@@ -100,7 +100,7 @@ export const TASKS = [
     kind: 'loop',
     field: 'vao',
     change: 'giam',
-    story: 'Khung dây đang được kéo ra khỏi vùng từ trường.',
+    story: 'Vòng dây đang được kéo ra khỏi vùng từ trường.',
   },
   { kind: 'rod', velocity: 180, field: 'vao' },
   { kind: 'loop', field: 'ra', change: 'giam', story: 'Cảm ứng từ giảm dần.' },

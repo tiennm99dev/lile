@@ -6,7 +6,7 @@ export default {
     'Chương Từ trường nối hai ý lớn: từ trường tác dụng lực lên dòng điện, và từ thông biến thiên sinh ra dòng điện. Bài này ôn lại các công thức, luyện cách xác định chiều bằng quy tắc bàn tay trái, quy tắc nắm tay phải và định luật Lenz, rồi vận dụng vào máy phát điện, máy biến áp và truyền tải điện năng.',
   objectives: [
     'Xác định được chiều lực từ bằng quy tắc bàn tay trái và tính được $F = BIL\\sin\\alpha$; xác định được $B$ từ số liệu đo lực từ.',
-    'Tính được từ thông $\\Phi = NBS\\cos\\alpha$ và suất điện động cảm ứng $e_c = -N\\dfrac{\\Delta\\Phi}{\\Delta t}$.',
+    'Tính được từ thông $\\Phi = BS\\cos\\alpha$ qua một vòng dây và suất điện động cảm ứng $e_c = -N\\dfrac{\\Delta\\Phi}{\\Delta t}$ trong cuộn dây $N$ vòng.',
     'Xác định được chiều dòng điện cảm ứng bằng định luật Lenz.',
     'Giải được bài toán máy phát điện xoay chiều, máy biến áp và hao phí truyền tải điện năng.',
   ],
@@ -25,11 +25,11 @@ export default {
             ['Cảm ứng từ (dây vuông góc với đường sức)', '$B = \\dfrac{F}{IL}$, đơn vị tesla (T)'],
             [
               'Từ thông',
-              '$\\Phi = NBS\\cos\\alpha$ ($\\alpha$ là góc giữa pháp tuyến $\\vec{n}$ và $\\vec{B}$), đơn vị vêbe (Wb)',
+              'Qua một vòng: $\\Phi = BS\\cos\\alpha$ ($\\alpha$ là góc giữa pháp tuyến $\\vec{n}$ và $\\vec{B}$); qua cuộn $N$ vòng: $NBS\\cos\\alpha$; đơn vị vêbe (Wb)',
             ],
             [
               'Suất điện động cảm ứng',
-              '$e_c = -N\\dfrac{\\Delta\\Phi}{\\Delta t}$; thanh dẫn chuyển động vuông góc với đường sức: $|e_c| = Blv$',
+              '$e_c = -N\\dfrac{\\Delta\\Phi}{\\Delta t}$ ($\\Delta\\Phi$ qua một vòng); thanh dẫn chuyển động vuông góc với đường sức: $|e_c| = Blv$',
             ],
             [
               'Chiều dòng điện cảm ứng',
@@ -274,8 +274,8 @@ export default {
   ],
   takeaways: [
     'Lực từ: $F = BIL\\sin\\alpha$, chiều theo quy tắc bàn tay trái; dây vuông góc với đường sức thì $B = \\dfrac{F}{IL}$.',
-    'Từ thông $\\Phi = NBS\\cos\\alpha$, với $\\alpha$ là góc giữa pháp tuyến và $\\vec{B}$.',
-    'Chiều dòng điện cảm ứng: định luật Lenz rồi quy tắc nắm tay phải; độ lớn: $|e_c| = N\\dfrac{|\\Delta\\Phi|}{\\Delta t}$, thanh trượt $|e_c| = Blv$.',
+    'Từ thông qua một vòng dây $\\Phi = BS\\cos\\alpha$, với $\\alpha$ là góc giữa pháp tuyến và $\\vec{B}$.',
+    'Chiều dòng điện cảm ứng: định luật Lenz rồi quy tắc nắm tay phải; độ lớn: $|e_c| = N\\dfrac{|\\Delta\\Phi|}{\\Delta t}$ ($\\Delta\\Phi$ qua một vòng), thanh trượt $|e_c| = Blv$.',
     'Máy phát điện: $E_0 = NBS\\omega$; máy biến áp lí tưởng: $\\dfrac{U_1}{U_2} = \\dfrac{N_1}{N_2}$, $U_1I_1 = U_2I_2$; hao phí truyền tải $\\Delta P = \\dfrac{P^2R}{U^2}$.',
   ],
 };
