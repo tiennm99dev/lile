@@ -10,7 +10,7 @@ import { K_B, N_A, gauss } from '../_shared/gas.js';
 
 /** The gases on offer, with their molar masses in g/mol. */
 export const GASES = [
-  { id: 'he', name: 'Heli (He)', molar: 4 },
+  { id: 'he', name: 'Helium (He)', molar: 4 },
   { id: 'n2', name: 'Nitrogen (N₂)', molar: 28 },
   { id: 'o2', name: 'Oxygen (O₂)', molar: 32 },
   { id: 'co2', name: 'Carbon dioxide (CO₂)', molar: 44 },

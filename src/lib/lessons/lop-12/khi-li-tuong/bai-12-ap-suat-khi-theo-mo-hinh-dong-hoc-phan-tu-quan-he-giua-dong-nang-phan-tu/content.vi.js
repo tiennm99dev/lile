@@ -16,14 +16,14 @@ export default {
       blocks: [
         {
           type: 'p',
-          text: 'Xét $N$ phân tử khí lí tưởng, mỗi phân tử khối lượng $m$, trong một bình hình lập phương cạnh $l$. Một phân tử có thành phần vận tốc $v_x$ vuông góc với mặt bên ABCD của bình:',
+          text: 'Xét $N$ phân tử khí lí tưởng, mỗi phân tử khối lượng $m$, trong một bình hình lập phương cạnh $l$. Chọn trục $Ox$ vuông góc với một mặt bên $S$ của bình; một phân tử có thành phần vận tốc $v_x$ theo trục này:',
         },
         {
           type: 'list',
           ordered: true,
           items: [
-            'Va chạm đàn hồi với mặt ABCD, phân tử bật lại với $-v_x$: động lượng của nó biến thiên một lượng $2mv_x$, và nó truyền cho thành bình xung lượng $2mv_x$.',
-            'Phân tử quay lại va chạm mặt ABCD sau thời gian $\\Delta t = \\dfrac{2l}{v_x}$, nên lực trung bình nó tác dụng lên mặt này là $F = \\dfrac{2mv_x}{\\Delta t} = \\dfrac{mv_x^2}{l}$.',
+            'Va chạm đàn hồi với mặt $S$, phân tử bật lại với $-v_x$: động lượng của nó biến thiên một lượng $2mv_x$, và nó truyền cho thành bình xung lượng $2mv_x$.',
+            'Phân tử quay lại va chạm mặt $S$ sau thời gian $\\Delta t = \\dfrac{2l}{v_x}$, nên lực trung bình nó tác dụng lên mặt này là $F = \\dfrac{2mv_x}{\\Delta t} = \\dfrac{mv_x^2}{l}$.',
             'Cộng lực của $N$ phân tử và chia cho diện tích $l^2$: $p = \\dfrac{Nm\\overline{v_x^2}}{l^3}$.',
             'Chuyển động hỗn loạn nên không có hướng nào được ưu tiên: $\\overline{v_x^2} = \\overline{v_y^2} = \\overline{v_z^2} = \\dfrac{1}{3}\\overline{v^2}$. Đặt $\\mu = \\dfrac{N}{V} = \\dfrac{N}{l^3}$, ta được công thức dưới đây.',
           ],
@@ -180,7 +180,7 @@ export default {
       unit: 'lần',
       hints: ['$\\sqrt{\\overline{v^2}} = \\sqrt{\\dfrac{3RT}{M}}$ tỉ lệ nghịch với $\\sqrt{M}$.'],
       solution:
-        '$\\dfrac{\\sqrt{\\overline{v^2_{H_2}}}}{\\sqrt{\\overline{v^2_{O_2}}}} = \\sqrt{\\dfrac{32}{2}} = \\sqrt{16} = 4$.',
+        '$\\dfrac{\\sqrt{\\overline{v^2_{\\text{H}_2}}}}{\\sqrt{\\overline{v^2_{\\text{O}_2}}}} = \\sqrt{\\dfrac{32}{2}} = \\sqrt{16} = 4$.',
     },
     {
       type: 'number',

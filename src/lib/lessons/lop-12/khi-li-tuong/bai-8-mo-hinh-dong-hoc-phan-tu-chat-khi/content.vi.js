@@ -80,7 +80,7 @@ export default {
         },
         {
           type: 'p',
-          text: 'Mô hình khí lí tưởng giúp mô tả chất khí một cách đơn giản. Ở áp suất và nhiệt độ thông thường (chẳng hạn không khí trong phòng), khoảng cách giữa các phân tử rất lớn so với kích thước của chúng nên các khí thực như ôxi, nitơ, không khí… có thể coi gần đúng là khí lí tưởng. Ở áp suất rất cao hoặc nhiệt độ rất thấp, các phân tử ở gần nhau, lực liên kết không còn bỏ qua được và khí thực khác xa khí lí tưởng.',
+          text: 'Mô hình khí lí tưởng giúp mô tả chất khí một cách đơn giản. Ở áp suất và nhiệt độ thông thường (chẳng hạn không khí trong phòng), khoảng cách giữa các phân tử rất lớn so với kích thước của chúng nên các khí thực như oxygen, nitrogen, không khí… có thể coi gần đúng là khí lí tưởng. Ở áp suất rất cao hoặc nhiệt độ rất thấp, các phân tử ở gần nhau, lực liên kết không còn bỏ qua được và khí thực khác xa khí lí tưởng.',
         },
       ],
     },
@@ -213,7 +213,7 @@ export default {
       options: [
         'Khí bị nén ở áp suất rất cao và nhiệt độ rất thấp',
         'Không khí trong phòng học',
-        'Khí ôxi trong bình ở áp suất khí quyển và nhiệt độ phòng',
+        'Khí oxygen trong bình ở áp suất khí quyển và nhiệt độ phòng',
         'Khí loãng ở nhiệt độ cao',
       ],
       answer: 0,

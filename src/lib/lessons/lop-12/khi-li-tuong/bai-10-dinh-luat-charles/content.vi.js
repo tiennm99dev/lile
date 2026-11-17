@@ -178,7 +178,7 @@ export default {
     {
       type: 'number',
       prompt:
-        'Một quả bóng bay chứa $2{,}0$ lít khí ở $27$ °C. Đưa bóng ra ngoài nắng, khí trong bóng nóng lên $47$ °C. Coi áp suất khí trong bóng không đổi. Thể tích của bóng lúc đó là bao nhiêu lít (làm tròn đến hàng phần trăm)?',
+        'Một quả bóng bay chứa $2{,}0$ lít khí ở $27$ °C. Đưa bóng ra ngoài nắng, khí trong bóng nóng lên đến $47$ °C. Coi áp suất khí trong bóng không đổi. Thể tích của bóng lúc đó là bao nhiêu lít (làm tròn đến hàng phần trăm)?',
       answer: 2.13,
       tolerance: 0.01,
       unit: 'lít',

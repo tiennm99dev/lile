@@ -83,7 +83,7 @@ export default {
       blocks: [
         {
           type: 'p',
-          text: 'Hằng số trong $\\dfrac{pV}{T} = $ hằng số tỉ lệ với lượng khí. Ở điều kiện tiêu chuẩn ($0$ °C, $1{,}013 \\cdot 10^5$ Pa), $1$ mol khí bất kì chiếm thể tích $22{,}4$ lít, nên với $n$ mol khí: $$\\frac{pV}{T} = n\\cdot\\frac{1{,}013 \\cdot 10^5 \\cdot 22{,}4 \\cdot 10^{-3}}{273} \\approx n \\cdot 8{,}31 \\text{ J/K}.$$',
+          text: 'Hằng số trong $\\dfrac{pV}{T} = $ hằng số tỉ lệ với lượng khí. Ở điều kiện tiêu chuẩn ($T_0 = 273$ K, $p_0 = 1{,}013 \\cdot 10^5$ Pa), $1$ mol khí bất kì chiếm thể tích $V_0 = 22{,}4$ lít $= 0{,}0224$ m³, nên với $n$ mol khí: $$\\frac{pV}{T} = n\\cdot\\frac{p_0V_0}{T_0},$$ trong đó $$\\frac{p_0V_0}{T_0} = \\frac{1{,}013 \\cdot 10^5 \\cdot 0{,}0224}{273} \\approx 8{,}31$$ (đơn vị J/(mol.K)).',
         },
         {
           type: 'callout',

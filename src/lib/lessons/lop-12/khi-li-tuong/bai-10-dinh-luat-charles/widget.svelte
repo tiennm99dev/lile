@@ -11,7 +11,7 @@
 
   const COLORS = { 1: '#2563eb', 2: '#7c3aed' };
 
-  let celsius = $state(27);
+  let celsius = $state(25);
   let pressure = $state(1);
   let axis = $state('t');
   /** @type {import('./engine.js').Reading[]} */
