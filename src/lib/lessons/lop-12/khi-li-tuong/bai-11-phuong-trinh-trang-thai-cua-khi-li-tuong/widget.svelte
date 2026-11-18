@@ -94,7 +94,7 @@
 
   /** @param {import('./engine.js').State} s */
   const stateText = (s) =>
-    `p = ${formatNumber(s.p, 1)} kPa, V = ${formatNumber(s.V, 1)} l, T = ${formatNumber(Math.round(s.T))} K`;
+    `p = ${formatNumber(s.p, 1)} kPa, V = ${formatNumber(s.V, 1)} lít, T = ${formatNumber(Math.round(s.T))} K`;
 
   const note = $derived.by(() => {
     const r1 = formatFixed(ratioOf(first), 2);
@@ -182,7 +182,7 @@
         min={free === 'V' ? V_RANGE.min : range.min}
         max={free === 'V' ? V_RANGE.max : range.max}
         step={free === 'V' ? 0.5 : T_STEP}
-        unit={free === 'V' ? 'l' : 'K'}
+        unit={free === 'V' ? 'lít' : 'K'}
         oninput={slide}
       />
     </fieldset>
