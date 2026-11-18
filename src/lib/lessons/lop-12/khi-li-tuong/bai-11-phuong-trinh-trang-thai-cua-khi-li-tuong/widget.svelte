@@ -8,8 +8,10 @@
   import GasGraph from '../_shared/gas-graph.svelte';
   import {
     T_RANGE,
+    T_STEP,
     V_RANGE,
     freeOf,
+    isStuck,
     move,
     pointOf,
     processLine,
@@ -30,6 +32,7 @@
 
   const range = $derived(rangeOf(fixed, first, n));
   const free = $derived(freeOf(fixed));
+  const stuck = $derived(isStuck(fixed, range));
 
   /** Starts a new process from the current state. */
   function begin() {
@@ -171,15 +174,25 @@
       onchange={setN}
     />
   </div>
-  <SliderField
-    label={free === 'V' ? 'Thể tích khí' : 'Nhiệt độ khí'}
-    bind:value
-    min={free === 'V' ? V_RANGE.min : range.min}
-    max={free === 'V' ? V_RANGE.max : range.max}
-    step={free === 'V' ? 0.5 : 10}
-    unit={free === 'V' ? 'l' : 'K'}
-    oninput={slide}
-  />
+  <div>
+    <fieldset disabled={stuck} class="min-w-0 disabled:opacity-60">
+      <SliderField
+        label={free === 'V' ? 'Thể tích khí' : 'Nhiệt độ khí'}
+        bind:value
+        min={free === 'V' ? V_RANGE.min : range.min}
+        max={free === 'V' ? V_RANGE.max : range.max}
+        step={free === 'V' ? 0.5 : T_STEP}
+        unit={free === 'V' ? 'l' : 'K'}
+        oninput={slide}
+      />
+    </fieldset>
+    {#if stuck}
+      <p class="mt-1 text-sm text-slate-600">
+        Ở trạng thái này khí đã chạm giới hạn của xi lanh nên không đổi được nhiệt độ. Hãy bấm Làm
+        lại hoặc chọn quá trình khác.
+      </p>
+    {/if}
+  </div>
   <div class="flex flex-wrap gap-2">
     <button type="button" class={button.secondary} onclick={begin}>
       Lấy trạng thái hiện tại làm trạng thái 1

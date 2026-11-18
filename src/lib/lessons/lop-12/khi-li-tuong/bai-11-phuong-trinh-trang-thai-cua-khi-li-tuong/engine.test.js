@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { R } from '../_shared/gas.js';
-import { move, pointOf, processLine, rangeOf, ratioOf, stateAt } from './engine.js';
+import { isStuck, move, pointOf, processLine, rangeOf, ratioOf, stateAt } from './engine.js';
 
 const N = 0.4;
 
@@ -31,6 +31,15 @@ describe('the p, V, T panel', () => {
     const { min, max } = rangeOf('p', start, N);
     expect(move('p', start, min, N).V).toBeGreaterThanOrEqual(5);
     expect(move('p', start, max, N).V).toBeLessThanOrEqual(30);
+  });
+
+  it('flags an isobaric start that cannot change its temperature', () => {
+    const corner = stateAt(N, 5, 600);
+    expect(rangeOf('p', corner, N)).toEqual({ min: 600, max: 600 });
+    expect(isStuck('p', rangeOf('p', corner, N))).toBe(true);
+    expect(isStuck('p', rangeOf('p', stateAt(N, 10, 300), N))).toBe(false);
+    expect(isStuck('V', rangeOf('V', corner, N))).toBe(false);
+    expect(isStuck('T', rangeOf('T', corner, N))).toBe(false);
   });
 
   it('draws each state on its process line', () => {
