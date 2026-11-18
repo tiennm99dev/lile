@@ -1,4 +1,4 @@
-# PhysicsFriend
+# LíLẽ
 
 Vật lí tương tác cho học sinh Việt Nam lớp 6-12, theo bộ sách Kết nối tri thức với cuộc sống (KNTT): mạch Vật lí của Khoa học tự nhiên 6-9 và Vật lí 10-12 cùng các Chuyên đề học tập. Học qua thí nghiệm ảo: kéo lực, đo chuyển động, lắp mạch điện, dò tia sáng.
 
@@ -10,7 +10,7 @@ Mọi bài trong sách đều có trang; bài chưa soạn hiện dạng "Sắp 
 - `/co-hoc/`, `/dien-hoc/`, `/quang-hoc/`, ... gom chương của một mạch kiến thức qua mọi lớp.
 - `/_gallery/` (noindex) hiển thị mọi thành phần trực quan để rà soát.
 
-Live URL: https://tiennm99dev.github.io/physicsfriend/
+Live URL: https://tiennm99dev.github.io/lile/
 
 ## Develop
 
@@ -18,7 +18,7 @@ Yêu cầu: Node 24+, npm.
 
 ```sh
 npm install
-npm run dev           # http://localhost:5173/physicsfriend/
+npm run dev           # http://localhost:5173/lile/
 npm run lint          # ESLint (eslint-plugin-svelte)
 npm run format:check  # Prettier --check
 npm run check         # svelte-kit sync + svelte-check --fail-on-warnings (JSDoc strict)
@@ -37,11 +37,11 @@ CI (`.github/workflows/ci.yml`) chạy lint, format:check, check, test, build v�
 
 ## Architecture
 
-PhysicsFriend là site anh em của [MathMate](https://github.com/tiennm99dev/mathmate) và dùng chung phần lõi với nó.
+LíLẽ là site anh em của [ToánTốt](https://github.com/tiennm99dev/toantot) và dùng chung phần lõi với nó.
 
-- **Phần dùng chung (đồng bộ)**: `src/lib/core/`, các engine `src/lib/*-engine/`, `src/routes/`, `src/params/`, `scripts/`, config, workflow và skill soạn bài được chép từ MathMate bằng `scripts/sync-core.sh` của MathMate. Mỗi file có dòng ghi chú "Synced from tiennm99dev/mathmate"; commit nguồn nằm trong `CORE_VERSION`. Không sửa các file này ở đây: sửa ở MathMate, commit, rồi chạy `scripts/sync-core.sh <đường dẫn tới physicsfriend>` trong MathMate.
-- **Phần riêng của PhysicsFriend**: `src/lib/curriculum/lop-6.json` … `lop-12.json` và `strands.json` (sinh một lần từ manifest bằng `node scripts/import-curriculum.js --grades 6-12 <manifest>`, sau đó sửa tay), `src/lib/curriculum/curriculum.test.js`, `src/lib/curriculum/legacy-redirects.js` (rỗng), `src/lib/i18n/site.vi.js` (tên site, các mạch kiến thức), `src/lib/domain/`, `src/lib/lessons/` và `static/`.
-- **Static**: SvelteKit + `@sveltejs/adapter-static`, cấu hình trong `vite.config.js`: `paths.base` là `/physicsfriend` (tên package; đổi bằng `SITE_BASE`), `paths.origin` là `https://tiennm99dev.github.io` (đổi bằng `SITE_ORIGIN`), CSP chế độ `hash`, Tailwind 4, Be Vietnam Pro, KaTeX render sẵn lúc prerender. `/sitemap.xml` liệt kê trang chủ, mọi trang lớp, chương, mạch kiến thức và bài học.
+- **Phần dùng chung (đồng bộ)**: `src/lib/core/`, các engine `src/lib/*-engine/`, `src/routes/`, `src/params/`, `scripts/`, config, workflow và skill soạn bài được chép từ ToánTốt bằng `scripts/sync-core.sh` của ToánTốt. Mỗi file có dòng ghi chú "Synced from tiennm99dev/toantot"; commit nguồn nằm trong `CORE_VERSION`. Không sửa các file này ở đây: sửa ở ToánTốt, commit, rồi chạy `scripts/sync-core.sh <đường dẫn tới lile>` trong ToánTốt.
+- **Phần riêng của LíLẽ**: `src/lib/curriculum/lop-6.json` … `lop-12.json` và `strands.json` (sinh một lần từ manifest bằng `node scripts/import-curriculum.js --grades 6-12 <manifest>`, sau đó sửa tay), `src/lib/curriculum/curriculum.test.js`, `src/lib/curriculum/legacy-redirects.js` (rỗng), `src/lib/i18n/site.vi.js` (tên site, các mạch kiến thức), `src/lib/domain/`, `src/lib/lessons/` và `static/`.
+- **Static**: SvelteKit + `@sveltejs/adapter-static`, cấu hình trong `vite.config.js`: `paths.base` là `/lile` (tên package; đổi bằng `SITE_BASE`), `paths.origin` là `https://tiennm99dev.github.io` (đổi bằng `SITE_ORIGIN`), CSP chế độ `hash`, Tailwind 4, Be Vietnam Pro, KaTeX render sẵn lúc prerender. `/sitemap.xml` liệt kê trang chủ, mọi trang lớp, chương, mạch kiến thức và bài học.
 - **Language**: JavaScript only (Svelte 5 runes, JSDoc qua `jsconfig.json` với `checkJs: true`).
 - **Thành phần Vật lí** (`src/lib/domain/`): mỗi thành phần có engine thuần (không DOM) kèm test Vitest và một demo `<tên>.gallery.svelte` hiện ở `/_gallery/`. Props được mô tả bằng JSDoc ở đầu mỗi file `.svelte`. Góc đo ngược chiều kim đồng hồ từ trục +x, trục y hướng lên.
 
@@ -59,9 +59,9 @@ PhysicsFriend là site anh em của [MathMate](https://github.com/tiennm99dev/ma
 
 ## Adding a lesson
 
-Hợp đồng của một bài học (thư mục, schema `content.vi.js`, số lượng tối thiểu, kiểm tra trước khi merge) là của MathMate và giống hệt ở đây: xem [phần "Adding a lesson" trong README của MathMate](https://github.com/tiennm99dev/mathmate#adding-a-lesson). Agent soạn bài theo brief đồng bộ ở `.claude/skills/write-lesson/SKILL.md`.
+Hợp đồng của một bài học (thư mục, schema `content.vi.js`, số lượng tối thiểu, kiểm tra trước khi merge) là của ToánTốt và giống hệt ở đây: xem [phần "Adding a lesson" trong README của ToánTốt](https://github.com/tiennm99dev/toantot#adding-a-lesson). Agent soạn bài theo brief đồng bộ ở `.claude/skills/write-lesson/SKILL.md`.
 
-Ở PhysicsFriend:
+Ở LíLẽ:
 
 - Người soạn một chương chỉ thêm file trong `src/lib/lessons/lop-N/<chương>/`; slug lấy nguyên từ `src/lib/curriculum/lop-N.json`.
 - Dùng thành phần Vật lí ở `src/lib/domain/` (import qua `#lib/domain/...`) trước khi tự vẽ; xem chúng chạy ở `/_gallery/`. Thành phần mới cho nhiều chương được thêm vào `src/lib/domain/` kèm engine, test và demo gallery.

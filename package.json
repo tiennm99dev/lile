@@ -1,8 +1,8 @@
 {
-  "name": "physicsfriend",
+  "name": "lile",
   "version": "0.0.1.0",
   "private": true,
-  "description": "PhysicsFriend — Vật lí tương tác cho học sinh lớp 6-12. Static site.",
+  "description": "LíLẽ — Vật lí tương tác cho học sinh lớp 6-12. Static site.",
   "type": "module",
   "scripts": {
     "dev": "vite dev",

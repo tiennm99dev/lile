@@ -1,9 +1,9 @@
 export const site = {
-  title: 'PhysicsFriend',
-  repo: 'https://github.com/tiennm99dev/physicsfriend',
+  title: 'LíLẽ',
+  repo: 'https://github.com/tiennm99dev/lile',
   tagline: 'Vật lí tương tác cho học sinh lớp 6-12',
   description:
-    'PhysicsFriend giúp học sinh lớp 6-12 học Vật lí theo sách Kết nối tri thức với cuộc sống qua thí nghiệm ảo: kéo lực, đo chuyển động, lắp mạch điện và dò tia sáng.',
+    'LíLẽ giúp học sinh lớp 6-12 học Vật lí theo sách Kết nối tri thức với cuộc sống qua thí nghiệm ảo: kéo lực, đo chuyển động, lắp mạch điện và dò tia sáng.',
 };
 
 export const home = {

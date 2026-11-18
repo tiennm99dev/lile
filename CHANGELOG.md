@@ -1,11 +1,12 @@
 # Changelog
 
-All notable changes to **PhysicsFriend** are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: 4-digit MAJOR.MINOR.PATCH.MICRO.
+All notable changes to **LíLẽ** are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: 4-digit MAJOR.MINOR.PATCH.MICRO.
 
 ## [Unreleased]
 
 ### Changed
 
+- Đổi tên site từ PhysicsFriend thành LíLẽ: repo `tiennm99dev/lile`, địa chỉ mới `https://tiennm99dev.github.io/lile/`. Các site anh em cũng đổi sang tên tiếng Việt: MathMate thành ToánTốt, AlgorithmAlly thành TinTưởng, ChemCoach thành HoáHợp, BioBuddy thành SinhSôi. Tiến độ "đã làm" lưu trong trình duyệt dưới cả hai tên cũ (PhysMax và PhysicsFriend) được chuyển sang tên mới ở lần mở bài đầu tiên.
 - Đổi tên site từ PhysMax thành PhysicsFriend: repo `tiennm99dev/physicsfriend`, địa chỉ mới `https://tiennm99dev.github.io/physicsfriend/`. Các site anh em cũng đổi tên: MathMax thành MathMate, AlgoAtlas thành AlgorithmAlly, ChemMax thành ChemCoach, BioMax thành BioBuddy. Tiến độ "đã làm" lưu trong trình duyệt dưới tên cũ được chuyển sang tên mới ở lần mở bài đầu tiên.
 
 ## [0.0.1.0] - 2026-10-25
