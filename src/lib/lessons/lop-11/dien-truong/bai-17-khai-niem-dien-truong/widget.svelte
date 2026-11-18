@@ -3,12 +3,12 @@
   import ForceArrow from '#lib/domain/force-arrow.svelte';
   import { arrowHead } from '#lib/domain/arrow.js';
   import FeedbackNote from '#lib/core/feedback-note.svelte';
-  import { formatNumber } from '#lib/core/number-format.js';
+  import { formatNumber, sciTex, sciText } from '#lib/core/number-format.js';
   import SegmentedControl from '#lib/core/segmented-control.svelte';
   import { button, card } from '#lib/core/ui.js';
   import ChargeDot from '../_shared/charge-dot.svelte';
   import { makeBoard } from '../_shared/board.js';
-  import { arrowPx, sciTex, sciText } from '../_shared/charges.js';
+  import { arrowPx } from '../_shared/charges.js';
   import { fieldLines, forceOnTest, midArrow, probeField } from './engine.js';
 
   const board = makeBoard({ width: 360, height: 240, scale: 20 });

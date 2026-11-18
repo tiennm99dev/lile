@@ -1,15 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import {
-  arrowPx,
-  coulomb,
-  fieldAt,
-  forceOn,
-  pointField,
-  potentialAt,
-  sciParts,
-  sciTex,
-  sciText,
-} from './charges.js';
+import { arrowPx, coulomb, fieldAt, forceOn, pointField, potentialAt } from './charges.js';
 
 describe('point charges', () => {
   it('follows Coulomb’s law with the book’s k', () => {
@@ -56,18 +46,7 @@ describe('point charges', () => {
   });
 });
 
-describe('powers of ten', () => {
-  it('writes text and TeX the book way', () => {
-    expect(sciParts(9.999e5)).toEqual({ mantissa: 1, exponent: 6 });
-    expect(sciText(3.6e-3)).toBe('3,6·10⁻³');
-    expect(sciText(-1.6e-19)).toBe('−1,6·10⁻¹⁹');
-    expect(sciText(1e-12)).toBe('10⁻¹²');
-    expect(sciText(0.9)).toBe('0,9');
-    expect(sciTex(9e9)).toBe('9 \\cdot 10^{9}');
-    expect(sciTex(-1e-6)).toBe('-10^{-6}');
-    expect(sciTex(4500)).toBe('4\\,500');
-  });
-
+describe('arrow length', () => {
   it('draws longer arrows for bigger values but never past the limit', () => {
     expect(arrowPx(0, 1, 50)).toBe(0);
     expect(arrowPx(1, 1, 50)).toBeLessThan(arrowPx(10, 1, 50));

@@ -8,9 +8,6 @@ import {
   orbitSpeed,
   potential,
   potentialEnergy,
-  sciParts,
-  sciTex,
-  sciText,
 } from './gravity.js';
 
 const { earth, moon, mars } = BODIES;
@@ -43,18 +40,5 @@ describe('gravitation with the book’s constants', () => {
     expect(escapeSpeed(earth.mass, earth.radius)).toBeCloseTo(11191.5, 1);
     expect(orbitSpeed(moon.mass, moon.radius)).toBeCloseTo(1663.5, 1);
     expect(orbitSpeed(mars.mass, mars.radius)).toBeCloseTo(3548.1, 1);
-  });
-});
-
-describe('powers of ten', () => {
-  it('writes text and TeX the book way', () => {
-    expect(sciText(6.68e-11)).toBe('6,68·10⁻¹¹');
-    expect(sciText(1.957e20)).toBe('1,96·10²⁰');
-    expect(sciText(9.785)).toBe('9,79');
-    expect(sciTex(-6.2625e7)).toBe('-6{,}26 \\cdot 10^{7}');
-    expect(sciTex(0.0027)).toBe('2{,}7 \\cdot 10^{-3}');
-    expect(sciTex(0.027)).toBe('0{,}027');
-    expect(sciParts(9.996e5)).toEqual({ mantissa: 1, exponent: 6 });
-    expect(sciParts(0)).toEqual({ mantissa: 0, exponent: 0 });
   });
 });

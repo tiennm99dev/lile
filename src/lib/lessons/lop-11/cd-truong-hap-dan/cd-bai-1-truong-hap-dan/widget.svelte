@@ -1,13 +1,12 @@
 <script>
   import { draggable } from '#lib/actions/draggable.svelte.js';
   import FeedbackNote from '#lib/core/feedback-note.svelte';
-  import { formatNumber } from '#lib/core/number-format.js';
+  import { formatNumber, sciTex, sciText } from '#lib/core/number-format.js';
   import SegmentedControl from '#lib/core/segmented-control.svelte';
   import { button, card } from '#lib/core/ui.js';
   import { clamp } from '#lib/core/visuals/svg-math.js';
   import { arrowHead } from '#lib/domain/arrow.js';
   import ForceArrow from '#lib/domain/force-arrow.svelte';
-  import { sciTex, sciText } from '../_shared/gravity.js';
   import {
     arrowPx,
     directionWords,

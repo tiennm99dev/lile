@@ -1,10 +1,8 @@
 /**
  * Newton's gravitation in SI units with the book's rounded constants: the
  * force between two masses, the field strength, the gravitational potential
- * and potential energy, orbital and escape speeds, and quantities written as
- * a mantissa times a power of ten (6,68·10⁻¹¹).
+ * and potential energy, and orbital and escape speeds.
  */
-import { formatNumber, numTex, sup } from '#lib/core/number-format.js';
 
 /** Gravitational constant, N·m²/kg², as the book rounds it. */
 export const G = 6.68e-11;
@@ -70,44 +68,4 @@ export function orbitSpeed(mass, r) {
  */
 export function escapeSpeed(mass, r) {
   return Math.sqrt((2 * G * mass) / r);
-}
-
-/**
- * Splits a value into a mantissa in [1, 10) rounded to `digits` decimals and
- * an exponent, carrying a mantissa that rounds up to 10. The sign stays on
- * the mantissa.
- * @param {number} value @param {number} [digits]
- */
-export function sciParts(value, digits = 2) {
-  if (value === 0) return { mantissa: 0, exponent: 0 };
-  let exponent = Math.floor(Math.log10(Math.abs(value)));
-  let mantissa = Number((value / 10 ** exponent).toFixed(digits));
-  if (Math.abs(mantissa) >= 10) {
-    exponent += 1;
-    mantissa = Number((value / 10 ** exponent).toFixed(digits));
-  }
-  return { mantissa, exponent };
-}
-
-/** @param {number} n */
-const supSigned = (n) => (n < 0 ? `⁻${sup(-n)}` : sup(n));
-
-/**
- * Plain text: 6,68·10⁻¹¹; values with an exponent from −2 to 3 as decimals.
- * @param {number} value @param {number} [digits]
- */
-export function sciText(value, digits = 2) {
-  const { mantissa, exponent } = sciParts(value, digits);
-  if (exponent >= -2 && exponent <= 3) return formatNumber(value, Math.max(0, digits - exponent));
-  return `${formatNumber(mantissa, digits)}·10${supSigned(exponent)}`;
-}
-
-/**
- * TeX source: 6{,}68 \cdot 10^{-11}, with the same decimal range as `sciText`.
- * @param {number} value @param {number} [digits]
- */
-export function sciTex(value, digits = 2) {
-  const { mantissa, exponent } = sciParts(value, digits);
-  if (exponent >= -2 && exponent <= 3) return numTex(value, Math.max(0, digits - exponent));
-  return `${numTex(mantissa, digits)} \\cdot 10^{${exponent}}`;
 }

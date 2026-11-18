@@ -2,12 +2,11 @@
   import { draggable } from '#lib/actions/draggable.svelte.js';
   import ForceArrow from '#lib/domain/force-arrow.svelte';
   import FeedbackNote from '#lib/core/feedback-note.svelte';
-  import { formatNumber } from '#lib/core/number-format.js';
+  import { formatNumber, sciTex, sciText } from '#lib/core/number-format.js';
   import SliderField from '#lib/core/slider-field.svelte';
   import { card } from '#lib/core/ui.js';
   import ChargeDot from '../_shared/charge-dot.svelte';
   import { makeBoard } from '../_shared/board.js';
-  import { sciTex, sciText } from '../_shared/charges.js';
   import { resultant } from './engine.js';
 
   const board = makeBoard({ width: 360, height: 240, scale: 20 });

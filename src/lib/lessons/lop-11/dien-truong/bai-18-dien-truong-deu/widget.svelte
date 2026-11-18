@@ -2,11 +2,10 @@
   import { arrowHead } from '#lib/domain/arrow.js';
   import FeedbackNote from '#lib/core/feedback-note.svelte';
   import { frameLoop, reducedMotion } from '#lib/core/motion.js';
-  import { formatNumber, numTex } from '#lib/core/number-format.js';
+  import { formatNumber, numTex, sciTex } from '#lib/core/number-format.js';
   import SegmentedControl from '#lib/core/segmented-control.svelte';
   import SliderField from '#lib/core/slider-field.svelte';
   import { button, card } from '#lib/core/ui.js';
-  import { sciTex } from '../_shared/charges.js';
   import { flight, path } from './engine.js';
 
   const W = 360;

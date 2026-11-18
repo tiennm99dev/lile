@@ -3,7 +3,7 @@
   import FeedbackNote from '#lib/core/feedback-note.svelte';
   import SliderField from '#lib/core/slider-field.svelte';
   import { button, card } from '#lib/core/ui.js';
-  import { sciTex, sciText } from '../_shared/sci.js';
+  import { sciTex, sciText } from '#lib/core/number-format.js';
   import {
     bandOf,
     colorName,

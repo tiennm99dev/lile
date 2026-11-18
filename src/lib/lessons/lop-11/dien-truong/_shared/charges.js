@@ -1,9 +1,9 @@
 /**
  * Point charges in SI units: Coulomb's law, the field and the potential of a
- * set of charges, the book's constants and quantities written as a mantissa
- * times a power of ten (3,6·10⁻³). Positions are plain `{ x, y }` with y up.
+ * set of charges and the book's constants. Positions are plain `{ x, y }`
+ * with y up.
  */
-import { formatNumber, numTex, sup, tidy } from '#lib/core/number-format.js';
+import { tidy } from '#lib/core/number-format.js';
 
 /** Coulomb constant k = 1/(4πε₀), N·m²/C², the book's rounded value. */
 export const K = 9e9;
@@ -92,52 +92,6 @@ export function potentialAt(charges, p, eps = 1) {
     v += (K * c.q) / (eps * r);
   }
   return v;
-}
-
-/**
- * Splits a value into a mantissa in [1, 10) rounded to `digits` decimals and
- * an exponent, carrying a mantissa that rounds up to 10. The sign stays on
- * the mantissa.
- * @param {number} value @param {number} [digits]
- */
-export function sciParts(value, digits = 2) {
-  if (value === 0) return { mantissa: 0, exponent: 0 };
-  let exponent = Math.floor(Math.log10(Math.abs(value)));
-  let mantissa = Number((value / 10 ** exponent).toFixed(digits));
-  if (Math.abs(mantissa) >= 10) {
-    exponent += 1;
-    mantissa = Number((value / 10 ** exponent).toFixed(digits));
-  }
-  return { mantissa, exponent };
-}
-
-/** @param {number} n */
-const supSigned = (n) => (n < 0 ? `⁻${sup(-n)}` : sup(n));
-
-/**
- * Plain text: 3,6·10⁻³; values with an exponent from −2 to 3 as decimals.
- * @param {number} value @param {number} [digits]
- */
-export function sciText(value, digits = 2) {
-  const { mantissa, exponent } = sciParts(value, digits);
-  if (exponent >= -2 && exponent <= 3) return formatNumber(value, Math.max(0, digits - exponent));
-  const m = formatNumber(mantissa, digits);
-  if (m === '1') return `10${supSigned(exponent)}`;
-  if (m === '−1') return `−10${supSigned(exponent)}`;
-  return `${m}·10${supSigned(exponent)}`;
-}
-
-/**
- * TeX source: 3{,}6 \cdot 10^{-3}, with the same decimal range as `sciText`.
- * @param {number} value @param {number} [digits]
- */
-export function sciTex(value, digits = 2) {
-  const { mantissa, exponent } = sciParts(value, digits);
-  if (exponent >= -2 && exponent <= 3) return numTex(value, Math.max(0, digits - exponent));
-  const m = numTex(mantissa, digits);
-  if (m === '1') return `10^{${exponent}}`;
-  if (m === '-1') return `-10^{${exponent}}`;
-  return `${m} \\cdot 10^{${exponent}}`;
 }
 
 /**
