@@ -13,6 +13,8 @@ export const V_RANGE = { min: 5, max: 30 };
 export const T_RANGE = { min: 150, max: 600 };
 /** Step of the temperature slider, K. */
 export const T_STEP = 10;
+/** Floating-point slack, in slider steps, absorbed before rounding to the grid. */
+const EPS = 1e-9;
 
 /**
  * The state at volume V (l) and temperature T (K) of n moles.
@@ -51,20 +53,20 @@ export function rangeOf(fixed, s, n) {
   const lo = (s.p * V_RANGE.min) / (n * R);
   const hi = (s.p * V_RANGE.max) / (n * R);
   return {
-    min: Math.max(T_RANGE.min, Math.ceil(lo / T_STEP) * T_STEP),
-    max: Math.min(T_RANGE.max, Math.floor(hi / T_STEP) * T_STEP),
+    min: Math.max(T_RANGE.min, Math.ceil(lo / T_STEP - EPS) * T_STEP),
+    max: Math.min(T_RANGE.max, Math.floor(hi / T_STEP + EPS) * T_STEP),
   };
 }
 
 /**
- * True when the temperature is the free quantity but its range holds fewer
- * than two slider steps, so the process cannot change it: an isobaric start
+ * True when the temperature is the free quantity but its range holds a
+ * single slider position, so the process cannot change it: an isobaric start
  * at 5 l and 600 K already sits at both the smallest volume and the hottest
  * temperature.
  * @param {Fixed} fixed @param {{ min: number, max: number }} range
  */
 export function isStuck(fixed, range) {
-  return freeOf(fixed) === 'T' && range.max - range.min < 2 * T_STEP;
+  return freeOf(fixed) === 'T' && range.max <= range.min;
 }
 
 /**

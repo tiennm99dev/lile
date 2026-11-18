@@ -42,6 +42,17 @@ describe('the p, V, T panel', () => {
     expect(isStuck('T', rangeOf('T', corner, N))).toBe(false);
   });
 
+  it('keeps the current temperature inside an isobaric range at the cylinder ends', () => {
+    expect(rangeOf('p', stateAt(N, 5, 220), N).min).toBe(220);
+    expect(rangeOf('p', stateAt(N, 30, 290), N).max).toBe(290);
+  });
+
+  it('lets an isobaric start with a single step left change its temperature', () => {
+    const range = rangeOf('p', stateAt(N, 5, 590), N);
+    expect(range).toEqual({ min: 590, max: 600 });
+    expect(isStuck('p', range)).toBe(false);
+  });
+
   it('draws each state on its process line', () => {
     const start = stateAt(N, 10, 300);
     for (const fixed of /** @type {const} */ (['T', 'p', 'V'])) {
