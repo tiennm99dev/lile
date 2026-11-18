@@ -1,0 +1,9 @@
+/* LíLẽ's subject art and colours for the age-band theme in app.css. Each
+   site owns this file and the SVGs in ./decor/; core reads only these custom
+   properties. The curriculum starts at grade 6, so there is no kid art. */
+:root {
+  --tile-line: url('./decor/tile-line.svg');
+  --spot-line: url('./decor/spot-line.svg');
+  --subject-tint: #e0f2fe;
+  --subject-ink: #075985;
+}
