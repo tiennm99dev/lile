@@ -117,7 +117,7 @@ export default [
     id: 'hang-so-boltzmann',
     term: 'hằng số Boltzmann',
     en: 'Boltzmann constant',
-    def: 'Hằng số k = R/N_A ≈ 1,38·10⁻²³ J/K; động năng trung bình của phân tử khí là 3kT/2.',
+    def: 'Hằng số k = R/NA ≈ 1,38·10⁻²³ J/K; động năng trung bình của phân tử khí là 3kT/2.',
     lesson:
       'khi-li-tuong/bai-12-ap-suat-khi-theo-mo-hinh-dong-hoc-phan-tu-quan-he-giua-dong-nang-phan-tu',
   },
@@ -141,7 +141,7 @@ export default [
     id: 'quy-tac-ban-tay-trai',
     term: 'quy tắc bàn tay trái',
     en: 'left-hand rule',
-    def: 'Đường sức từ vào lòng bàn tay trái, cổ tay đến ngón tay theo dòng điện thì ngón cái choãi ra chỉ chiều lực từ.',
+    def: 'Đặt bàn tay trái sao cho các đường sức từ hướng vào lòng bàn tay, chiều từ cổ tay đến các ngón tay trùng với chiều dòng điện; khi đó ngón tay cái choãi ra 90° chỉ chiều của lực từ tác dụng lên đoạn dây dẫn.',
     lesson: 'tu-truong/bai-15-luc-tu-tac-dung-len-day-dan-mang-dong-dien-cam-ung-tu',
   },
   {
@@ -248,7 +248,7 @@ export default [
     id: 'chu-ki-ban-ra',
     term: 'chu kì bán rã',
     en: 'half-life',
-    def: 'Thời gian T để một nửa số hạt nhân của một lượng chất phóng xạ bị phân rã; số hạt còn lại N = N₀·2^(−t/T).',
+    def: 'Thời gian T để một nửa số hạt nhân của một lượng chất phóng xạ bị phân rã; sau thời gian t, số hạt nhân còn lại là N = N₀/2ⁿ với n = t/T.',
     lesson: 'vat-li-hat-nhan/bai-23-hien-tuong-phong-xa',
   },
   {

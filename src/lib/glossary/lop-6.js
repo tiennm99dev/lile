@@ -53,7 +53,7 @@ export default [
     en: 'temperature',
     def: 'Số đo độ nóng, lạnh của một vật; vật càng nóng thì nhiệt độ càng cao. Trong thang Celsius, nước đá đang tan ở 0 °C và nước đang sôi ở 100 °C.',
     lesson: 'mo-dau-ve-khoa-hoc-tu-nhien/bai-8-do-nhiet-do',
-    aka: ['thang nhiệt độ Celsius', 'độ C', '°C'],
+    aka: ['độ C', '°C'],
   },
   {
     id: 'luc',
@@ -199,6 +199,5 @@ export default [
     def: 'Tập hợp rất nhiều ngôi sao cùng các hành tinh, khí và bụi, liên kết với nhau bởi lực hấp dẫn. Ngân Hà là thiên hà chứa hệ Mặt Trời.',
     lesson: 'trai-dat-va-bau-troi/bai-55-ngan-ha',
     see: ['he-mat-troi'],
-    aka: ['Ngân Hà'],
   },
 ];

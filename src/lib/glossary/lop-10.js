@@ -34,7 +34,7 @@ export default [
     def: 'Đại lượng vectơ cho biết cả độ nhanh chậm và hướng chuyển động. Vận tốc trung bình bằng độ dịch chuyển chia cho thời gian, v = d/t, và có hướng của độ dịch chuyển.',
     lesson: 'dong-hoc/bai-5-toc-do-va-van-toc',
     see: ['do-dich-chuyen'],
-    aka: ['vận tốc trung bình', 'vận tốc tức thời', 'v'],
+    aka: ['v'],
   },
   {
     id: 'do-thi-do-dich-chuyen-thoi-gian',
@@ -106,7 +106,7 @@ export default [
     en: "Newton's second law",
     def: 'Gia tốc của vật cùng hướng với lực tác dụng, có độ lớn tỉ lệ thuận với lực và tỉ lệ nghịch với khối lượng: a = F/m. Lực 1 N truyền cho vật 1 kg gia tốc 1 m/s².',
     lesson: 'dong-luc-hoc/bai-15-dinh-luat-2-newton',
-    aka: ['F = ma', 'newton', 'N'],
+    aka: ['F = ma'],
   },
   {
     id: 'dinh-luat-3-newton',
@@ -114,7 +114,6 @@ export default [
     en: "Newton's third law",
     def: 'Khi vật A tác dụng lên vật B một lực thì B cũng tác dụng lại A một lực cùng phương, ngược chiều, cùng độ lớn. Lực và phản lực đặt vào hai vật khác nhau nên không cân bằng nhau.',
     lesson: 'dong-luc-hoc/bai-16-dinh-luat-3-newton',
-    aka: ['lực và phản lực'],
   },
   {
     id: 'trong-luc',
@@ -123,7 +122,7 @@ export default [
     def: 'Lực hấp dẫn do Trái Đất tác dụng lên vật, gây ra gia tốc rơi tự do. Trọng lực có phương thẳng đứng, chiều từ trên xuống, đặt tại trọng tâm và có độ lớn P = mg.',
     lesson: 'dong-luc-hoc/bai-17-trong-luc-va-luc-cang',
     see: ['lop-6/trong-luong'],
-    aka: ['P = mg'],
+    aka: ['P'],
   },
   {
     id: 'luc-cang',
@@ -148,7 +147,6 @@ export default [
     def: 'Lực xuất hiện ở mặt tiếp xúc khi vật trượt trên một bề mặt, ngược chiều chuyển động tương đối, có độ lớn F = μN. Hệ số μ phụ thuộc vật liệu và tình trạng mặt tiếp xúc.',
     lesson: 'dong-luc-hoc/bai-18-luc-ma-sat',
     see: ['luc-ma-sat-nghi'],
-    aka: ['hệ số ma sát trượt', 'μ'],
   },
   {
     id: 'chat-luu',
@@ -315,7 +313,6 @@ export default [
     def: 'Áp suất tại độ sâu h trong chất lỏng đứng yên: p = pa + ρgh, với pa là áp suất khí quyển trên mặt thoáng. Các điểm trên cùng mặt phẳng ngang có cùng áp suất.',
     lesson: 'bien-dang-cua-vat-ran-ap-suat-chat-long/bai-34-khoi-luong-rieng-ap-suat-chat-long',
     see: ['lop-8/ap-suat'],
-    aka: ['p = ρgh'],
   },
   {
     id: 'dinh-luat-pascal',
@@ -324,6 +321,5 @@ export default [
     def: 'Độ tăng áp suất lên chất lỏng trong bình kín được truyền nguyên vẹn đến mọi điểm của chất lỏng và thành bình. Máy nén thuỷ lực dựa trên định luật này.',
     lesson: 'bien-dang-cua-vat-ran-ap-suat-chat-long/bai-34-khoi-luong-rieng-ap-suat-chat-long',
     see: ['ap-suat-chat-long'],
-    aka: ['máy nén thuỷ lực'],
   },
 ];

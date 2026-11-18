@@ -57,16 +57,16 @@ export default [
     def: 'Hiện tượng tia sáng bị gãy khúc tại mặt phân cách khi truyền xiên góc từ môi trường trong suốt này sang môi trường trong suốt khác. Tia khúc xạ nằm trong mặt phẳng tới, bên kia pháp tuyến, và sin i / sin r không đổi.',
     lesson: 'anh-sang/bai-5-khuc-xa-anh-sang',
     see: ['chiet-suat', 'phan-xa-toan-phan'],
-    aka: ['định luật khúc xạ ánh sáng', 'tia khúc xạ', 'góc khúc xạ'],
+    aka: ['định luật khúc xạ ánh sáng'],
   },
   {
     id: 'chiet-suat',
     term: 'chiết suất',
     en: 'refractive index',
-    def: 'Đại lượng n = c/v của một môi trường, với c = 3.10⁸ m/s là tốc độ ánh sáng trong chân không và v là tốc độ ánh sáng trong môi trường. Chân không có n = 1, nước n ≈ 4/3, thuỷ tinh n ≈ 1,5.',
+    def: 'Đại lượng n = c/v của một môi trường, với c = 3·10⁸ m/s là tốc độ ánh sáng trong chân không và v là tốc độ ánh sáng trong môi trường. Chân không có n = 1, nước n ≈ 4/3, thuỷ tinh n ≈ 1,5.',
     lesson: 'anh-sang/bai-5-khuc-xa-anh-sang',
     see: ['khuc-xa-anh-sang'],
-    aka: ['chiết suất tuyệt đối', 'chiết suất tỉ đối', 'n'],
+    aka: ['chiết suất tuyệt đối', 'n'],
   },
   {
     id: 'phan-xa-toan-phan',
@@ -75,7 +75,6 @@ export default [
     def: 'Hiện tượng toàn bộ ánh sáng tới bị phản xạ trở lại môi trường cũ tại mặt phân cách giữa hai môi trường trong suốt, không có tia khúc xạ. Sợi quang, cáp quang truyền ánh sáng đi xa nhờ hiện tượng này.',
     lesson: 'anh-sang/bai-6-phan-xa-toan-phan',
     see: ['goc-toi-han', 'lop-7/phan-xa-anh-sang'],
-    aka: ['sợi quang', 'cáp quang'],
   },
   {
     id: 'goc-toi-han',
@@ -93,7 +92,6 @@ export default [
     def: 'Khối trong suốt, đồng chất (thuỷ tinh, nhựa...) giới hạn bởi hai mặt phẳng không song song, thường có dạng lăng trụ tam giác. Tia sáng qua lăng kính khúc xạ hai lần và tia ló lệch về phía đáy.',
     lesson: 'anh-sang/bai-7-lang-kinh',
     see: ['tan-sac-anh-sang'],
-    aka: ['góc chiết quang', 'góc lệch'],
   },
   {
     id: 'tan-sac-anh-sang',
@@ -102,7 +100,7 @@ export default [
     def: 'Hiện tượng lăng kính tách các chùm sáng màu có sẵn trong ánh sáng trắng, cho mỗi chùm đi theo một phương khác nhau, thành dải màu từ đỏ đến tím: đỏ lệch ít nhất, tím lệch nhiều nhất.',
     lesson: 'anh-sang/bai-7-lang-kinh',
     see: ['lang-kinh'],
-    aka: ['sự tán sắc ánh sáng', 'ánh sáng trắng'],
+    aka: ['sự tán sắc ánh sáng'],
   },
   {
     id: 'thau-kinh-hoi-tu',
@@ -111,7 +109,7 @@ export default [
     def: 'Thấu kính (khối trong suốt giới hạn bởi hai mặt cong, hoặc một mặt cong và một mặt phẳng) có phần rìa mỏng hơn phần giữa. Chùm tia tới song song với trục chính cho chùm tia ló hội tụ tại tiêu điểm.',
     lesson: 'anh-sang/bai-8-thau-kinh',
     see: ['thau-kinh-phan-ki', 'tieu-diem', 'kinh-lup'],
-    aka: ['thấu kính', 'thấu kính rìa mỏng'],
+    aka: ['thấu kính rìa mỏng'],
   },
   {
     id: 'thau-kinh-phan-ki',
@@ -129,7 +127,7 @@ export default [
     def: 'Hai điểm F, F′ trên trục chính, ở hai bên thấu kính, cách đều quang tâm O. Với thấu kính hội tụ, tia ló hội tụ tại tiêu điểm; với thấu kính phân kì, đường kéo dài của tia ló đi qua tiêu điểm.',
     lesson: 'anh-sang/bai-8-thau-kinh',
     see: ['tieu-cu', 'thau-kinh-hoi-tu'],
-    aka: ['F', 'trục chính', 'quang tâm'],
+    aka: ['F'],
   },
   {
     id: 'tieu-cu',
@@ -147,7 +145,6 @@ export default [
     def: 'Thấu kính hội tụ có tiêu cự ngắn dùng để quan sát vật nhỏ. Số bội giác G = 25/f (f tính bằng cm) ghi trên kính dạng 2x, 5x; đặt vật trong khoảng tiêu cự thì thấy ảnh ảo, cùng chiều, lớn hơn vật.',
     lesson: 'anh-sang/bai-10-kinh-lup-bai-tap-thau-kinh',
     see: ['thau-kinh-hoi-tu', 'tieu-cu'],
-    aka: ['số bội giác', 'G'],
   },
   {
     id: 'dien-tro',
@@ -156,7 +153,7 @@ export default [
     def: 'Đại lượng đặc trưng cho mức độ cản trở dòng điện của một đoạn dây dẫn, bằng thương số giữa hiệu điện thế đặt vào hai đầu đoạn dây và cường độ dòng điện chạy qua nó: R = U/I, đơn vị ohm (Ω).',
     lesson: 'dien/bai-11-dien-tro-dinh-luat-ohm',
     see: ['dinh-luat-ohm', 'dien-tro-suat', 'dien-tro-tuong-duong'],
-    aka: ['R', 'ohm', 'Ω'],
+    aka: ['R', 'ohm', 'ôm', 'Ω'],
   },
   {
     id: 'dinh-luat-ohm',
@@ -182,7 +179,7 @@ export default [
     def: 'Điện trở có thể thay thế cho cả đoạn mạch mà với cùng hiệu điện thế, cường độ dòng điện qua mạch vẫn như trước. Nối tiếp: Rtđ = R₁ + R₂; song song: 1/Rtđ = 1/R₁ + 1/R₂.',
     lesson: 'dien/bai-12-doan-mach-noi-tiep-song-song',
     see: ['dien-tro'],
-    aka: ['Rtđ', 'đoạn mạch nối tiếp', 'đoạn mạch song song'],
+    aka: ['Rtđ'],
   },
   {
     id: 'cong-suat-dien',
@@ -191,7 +188,6 @@ export default [
     def: 'Năng lượng của dòng điện chạy qua đoạn mạch trong một đơn vị thời gian: P = W/t = UI, đơn vị oát (W). Số oát ghi trên thiết bị là công suất định mức, khi thiết bị dùng đúng hiệu điện thế định mức.',
     lesson: 'dien/bai-13-nang-luong-cua-dong-dien-va-cong-suat-dien',
     see: ['cong-suat'],
-    aka: ['công suất định mức'],
   },
   {
     id: 'cam-ung-dien-tu',
@@ -200,7 +196,7 @@ export default [
     def: 'Hiện tượng xuất hiện dòng điện cảm ứng trong cuộn dây dẫn kín. Nó xảy ra khi và chỉ khi số đường sức từ xuyên qua tiết diện S của cuộn dây biến thiên (tăng hoặc giảm).',
     lesson: 'dien-tu/bai-14-cam-ung-dien-tu-nguyen-tac-tao-ra-dong-dien-xoay-chieu',
     see: ['dong-dien-xoay-chieu', 'lop-7/duong-suc-tu'],
-    aka: ['cảm ứng điện từ', 'dòng điện cảm ứng'],
+    aka: ['cảm ứng điện từ'],
   },
   {
     id: 'dong-dien-xoay-chieu',
@@ -209,7 +205,7 @@ export default [
     def: 'Dòng điện luân phiên đổi chiều, cường độ tăng, giảm tuần tự theo thời gian. Nó xuất hiện khi nam châm quay trước cuộn dây kín hoặc cuộn dây quay trong từ trường; dòng điện của pin, acquy là dòng điện một chiều.',
     lesson: 'dien-tu/bai-14-cam-ung-dien-tu-nguyen-tac-tao-ra-dong-dien-xoay-chieu',
     see: ['cam-ung-dien-tu'],
-    aka: ['AC', 'máy phát điện xoay chiều', 'dòng điện một chiều'],
+    aka: ['AC'],
   },
   {
     id: 'nang-luong-hoa-thach',
@@ -227,6 +223,5 @@ export default [
     def: 'Năng lượng từ các nguồn có sẵn trong tự nhiên, liên tục được bổ sung qua các quá trình tự nhiên: Mặt Trời, gió, sóng biển, dòng sông, sinh khối, địa nhiệt. Mỗi nguồn có ưu điểm và nhược điểm riêng.',
     lesson: 'nang-luong-voi-cuoc-song/bai-17-mot-so-dang-nang-luong-tai-tao',
     see: ['nang-luong-hoa-thach', 'lop-6/nang-luong-tai-tao'],
-    aka: ['năng lượng sinh khối', 'năng lượng địa nhiệt'],
   },
 ];

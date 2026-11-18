@@ -18,7 +18,6 @@ export default [
     en: 'photogate',
     def: 'Bộ phận gồm một đầu phát tia hồng ngoại và một đầu thu đặt đối diện nhau. Khi vật đi qua và chắn tia, cổng gửi tín hiệu điện tới đồng hồ đo thời gian hiện số để bật hoặc tắt đồng hồ.',
     lesson: 'mo-dau/bai-1-phuong-phap-va-ki-nang-hoc-tap-mon-khoa-hoc-tu-nhien',
-    aka: ['đồng hồ đo thời gian hiện số'],
   },
   {
     id: 'toc-do',
@@ -45,7 +44,6 @@ export default [
     def: 'Chuyển động qua lại quanh một vị trí cân bằng, như quả lắc đồng hồ, chiếc xích đu hay dây đàn sau khi gảy. Mọi nguồn âm đều dao động.',
     lesson: 'am-thanh/bai-12-song-am',
     see: ['song-am', 'tan-so', 'bien-do-dao-dong'],
-    aka: ['nguồn âm'],
   },
   {
     id: 'song-am',
@@ -62,7 +60,7 @@ export default [
     def: 'Số dao động vật thực hiện được trong 1 giây, đơn vị là héc (Hz). Tần số càng lớn thì âm phát ra càng cao (bổng), càng nhỏ thì âm càng thấp (trầm).',
     lesson: 'am-thanh/bai-13-do-to-va-do-cao-cua-am',
     see: ['ha-am', 'sieu-am'],
-    aka: ['Hz', 'héc', 'độ cao của âm'],
+    aka: ['héc', 'Hz'],
   },
   {
     id: 'bien-do-dao-dong',
@@ -71,7 +69,7 @@ export default [
     def: 'Độ lệch lớn nhất của vật dao động so với vị trí cân bằng của nó. Biên độ của nguồn âm càng lớn thì âm phát ra càng to.',
     lesson: 'am-thanh/bai-13-do-to-va-do-cao-cua-am',
     see: ['tan-so'],
-    aka: ['biên độ', 'độ to của âm'],
+    aka: ['biên độ'],
   },
   {
     id: 'ha-am',
@@ -119,7 +117,6 @@ export default [
     en: 'light ray',
     def: 'Đường thẳng có mũi tên chỉ hướng truyền, dùng để biểu diễn đường truyền của ánh sáng. Chùm sáng có ba loại: song song, hội tụ và phân kì.',
     lesson: 'anh-sang/bai-15-nang-luong-anh-sang-tia-sang-vung-toi',
-    aka: ['chùm sáng'],
   },
   {
     id: 'vung-toi',
@@ -145,7 +142,7 @@ export default [
     def: 'Hiện tượng ánh sáng bị hắt trở lại khi gặp một bề mặt nhẵn bóng. Theo định luật phản xạ ánh sáng, tia phản xạ nằm trong mặt phẳng tới và góc phản xạ bằng góc tới.',
     lesson: 'anh-sang/bai-16-su-phan-xa-anh-sang',
     see: ['phan-xa-khuech-tan', 'anh-ao'],
-    aka: ['định luật phản xạ ánh sáng', 'phản xạ gương', 'góc tới', 'góc phản xạ'],
+    aka: ['định luật phản xạ ánh sáng', 'phản xạ gương'],
   },
   {
     id: 'phan-xa-khuech-tan',
@@ -169,13 +166,12 @@ export default [
     en: 'magnetic material',
     def: 'Vật liệu bị nam châm hút, như sắt, thép, niken, coban và một số hợp kim của chúng. Nhôm, đồng, nhựa, gỗ, thuỷ tinh không bị nam châm hút.',
     lesson: 'tu/bai-18-nam-cham',
-    aka: ['nam châm'],
   },
   {
     id: 'cuc-cua-nam-cham',
     term: 'cực của nam châm',
     en: 'magnetic pole',
-    def: 'Mỗi nam châm có hai cực, nơi hút sắt mạnh nhất: cực Bắc (N) luôn chỉ hướng Bắc, cực Nam (S) luôn chỉ hướng Nam. Hai cực cùng tên đẩy nhau, khác tên hút nhau.',
+    def: 'Mỗi nam châm có hai cực, nơi hút sắt mạnh nhất; khi nam châm quay tự do, cực Bắc (N) chỉ hướng Bắc, cực Nam (S) chỉ hướng Nam. Hai cực cùng tên đẩy nhau, khác tên hút nhau.',
     lesson: 'tu/bai-18-nam-cham',
     see: ['la-ban'],
     aka: ['cực Bắc', 'cực Nam', 'N', 'S'],
@@ -195,7 +191,6 @@ export default [
     def: 'Không gian bao quanh nam châm hoặc dây dẫn có dòng điện, có khả năng tác dụng lực từ lên kim nam châm đặt trong nó. Ta nhận biết từ trường bằng kim nam châm.',
     lesson: 'tu/bai-19-tu-truong',
     see: ['duong-suc-tu'],
-    aka: ['lực từ'],
   },
   {
     id: 'duong-suc-tu',
@@ -204,7 +199,6 @@ export default [
     def: 'Đường vẽ dựa vào từ phổ để biểu diễn từ trường; bên ngoài nam châm, nó đi ra từ cực Bắc, đi vào cực Nam. Nơi đường sức từ dày thì từ trường mạnh.',
     lesson: 'tu/bai-19-tu-truong',
     see: ['tu-truong'],
-    aka: ['từ phổ'],
   },
   {
     id: 'tu-truong-trai-dat',

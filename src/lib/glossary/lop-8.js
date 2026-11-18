@@ -66,10 +66,10 @@ export default [
     id: 'luc-day-archimedes',
     term: 'lực đẩy Archimedes',
     en: 'buoyant force',
-    def: 'Lực chất lỏng đẩy vật nhúng trong nó, phương thẳng đứng, chiều từ dưới lên. Độ lớn bằng trọng lượng phần chất lỏng bị vật chiếm chỗ: F_A = d.V.',
+    def: 'Lực chất lỏng đẩy vật nhúng trong nó, phương thẳng đứng, chiều từ dưới lên. Độ lớn bằng trọng lượng phần chất lỏng bị vật chiếm chỗ: FA = d.V.',
     lesson: 'khoi-luong-rieng-va-ap-suat/bai-17-luc-day-archimedes',
     see: ['lop-6/trong-luong'],
-    aka: ['F_A'],
+    aka: ['FA'],
   },
   {
     id: 'moment-luc',
@@ -101,7 +101,7 @@ export default [
     id: 'dien-tich',
     term: 'điện tích',
     en: 'electric charge',
-    def: 'Có hai loại: điện tích dương (+) và điện tích âm (−). Các vật nhiễm điện cùng loại thì đẩy nhau, khác loại thì hút nhau.',
+    def: 'Vật bị nhiễm điện là vật mang điện tích. Có hai loại: điện tích dương (+) và điện tích âm (−); các vật nhiễm điện cùng loại thì đẩy nhau, khác loại thì hút nhau.',
     lesson: 'dien/bai-20-hien-tuong-nhiem-dien-do-co-xat',
   },
   {
@@ -146,7 +146,7 @@ export default [
   {
     id: 'cuong-do-dong-dien',
     term: 'cường độ dòng điện',
-    en: 'current intensity',
+    en: 'current',
     def: 'Đại lượng cho biết mức độ mạnh yếu của dòng điện, kí hiệu I, đo bằng ampe kế. Đơn vị là ampe (A), 1 A = 1 000 mA.',
     lesson: 'dien/bai-24-cuong-do-dong-dien-va-hieu-dien-the',
     see: ['ampe-ke', 'dong-dien'],
