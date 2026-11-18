@@ -4,6 +4,10 @@ All notable changes to **LíLẽ** are documented here. Format: [Keep a Changelo
 
 ## [Unreleased]
 
+### Added
+
+- Trang "Thuật ngữ" (`/thuat-ngu/`) từ phần lõi của ToánTốt: thuật ngữ Vật lí của từng lớp xếp theo bảng chữ cái, kèm tên tiếng Anh, định nghĩa ngắn và liên kết tới bài học; tìm kiếm không cần gõ dấu. Liên kết ở thanh đầu trang, trang chủ, trang lớp, và khối "Thuật ngữ trong bài" ở cuối mỗi bài có thuật ngữ. Dữ liệu từng lớp nằm ở `src/lib/glossary/lop-6.js` … `lop-12.js`, hiện còn trống: trang hiện "Thuật ngữ đang được cập nhật." cho tới khi dữ liệu được soạn.
+
 ### Changed
 
 - Đổi tên site từ PhysicsFriend thành LíLẽ: repo `tiennm99dev/lile`, địa chỉ mới `https://tiennm99dev.github.io/lile/`. Các site anh em cũng đổi sang tên tiếng Việt: MathMate thành ToánTốt, AlgorithmAlly thành TinTưởng, ChemCoach thành HoáHợp, BioBuddy thành SinhSôi. Tiến độ "đã làm" lưu trong trình duyệt dưới cả hai tên cũ (PhysMax và PhysicsFriend) được chuyển sang tên mới ở lần mở bài đầu tiên.
